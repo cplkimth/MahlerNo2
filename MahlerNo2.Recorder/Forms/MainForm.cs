@@ -1,18 +1,14 @@
 ﻿using System;
 using System.IO;
 using System.Windows.Forms;
-using Newtonsoft.Json;
 using MahlerNo2.Core.Components;
 using MahlerNo2.Recorder.Components;
 using MahlerNo2.Recorder.Properties;
 
 namespace MahlerNo2.Recorder.Forms
 {
-    public partial class MainForm : Form
+    public partial class MainForm : RecorderBaseForm
     {
-        private const string DateFormat = "yyMMdd";
-        private const string TimeFormat = "HHmmss";
-
         private const string PlayFormText = @"▶";
         private const string PauseFormText = @"⏸";
 
@@ -20,13 +16,27 @@ namespace MahlerNo2.Recorder.Forms
         {
             InitializeComponent();
 
-            KeyboardHook.Hook(Core.Components.ModifierKeys.Control | Core.Components.ModifierKeys.Alt, Keys.F11,
-                (sender, args) => tsbNote.PerformClick());
-            KeyboardHook.Hook(Core.Components.ModifierKeys.Control | Core.Components.ModifierKeys.Alt, Keys.F12,
+            KeyboardHook.Hook(Core.Components.ModifierKeys.Control, Keys.F12,
                 (sender, args) => tsbPlay.PerformClick());
         }
+        
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            switch (keyData)
+            {
+                case Keys.Control | Keys.Alt | Keys.F11:
+                    if (Clipboard.GetData(DataFormats.Text) is string clipboardText)
+                        txtNote.Text = clipboardText;
+                    tsbPlay.PerformClick();
+                    break;
 
-        private Note _node;
+                case Keys.Control | Keys.Alt | Keys.F12:
+                    tsbPlay.PerformClick();
+                    break;
+            }
+
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
 
         protected override void OnLoad(EventArgs e)
         {
@@ -35,6 +45,7 @@ namespace MahlerNo2.Recorder.Forms
             if (DesignMode || Program.OnRunTime == false)
                 return;
 
+            Opacity = Settings.Default.Opacity / 100.0;
             Text = PlayFormText;
         }
 
@@ -46,7 +57,9 @@ namespace MahlerNo2.Recorder.Forms
                 return;
 
 #if DEBUG
+            TopMost = true;
 #else
+TopMost = true;
 if (Screen.AllScreens.Length > 1)
             {
                 var form = new ScreenSelectionForm();
@@ -63,48 +76,47 @@ if (Screen.AllScreens.Length > 1)
 
         private void tmrShot_Tick(object sender, EventArgs e)
         {
-            var directory = Path.Combine(Settings.Default.ShotRoot, DateTime.Today.ToString(DateFormat));
+            var directory = Path.Combine(Settings.Default.ShotRoot, DateTime.Today.ToString(Utility.DateFormat));
             Directory.CreateDirectory(directory);
-            var fileNameWithoutExtension = DateTime.Now.ToString(DateFormat + "_" + TimeFormat);
+            var fileNameWithoutExtension = DateTime.Now.ToString(Utility.DateTimeFormat);
 
             var bytes = ScreenShotTaker.Instance.ShotSelectedScreen();
 
             if (bytes != null)
             {
-                var filePath = Path.Combine(directory, fileNameWithoutExtension + ".png");
+                var filePath = Path.Combine(directory, fileNameWithoutExtension + Utility.ImageFileExtension);
                 File.WriteAllBytes(filePath, bytes);
             }
 
-            if (_node != null)
+            if (txtNote.Text != string.Empty)
             {
-                var json = JsonConvert.SerializeObject(_node);
-                var filePath = Path.Combine(directory, fileNameWithoutExtension + ".json");
-                File.WriteAllText(filePath, json);
+                var filePath = Path.Combine(directory, fileNameWithoutExtension + Utility.NoteFileExtension);
+                File.WriteAllText(filePath, txtNote.Text);
 
-                _node = null;
-                lblNote.Text = string.Empty;
+                txtNote.Text = string.Empty;
             }
         }
 
         private void tsbOption_Click(object sender, EventArgs e)
         {
-            StopTimer();
+            TopMost = false;
 
             var form = new OptionForm(this);
-            if (form.ShowDialog() == DialogResult.OK) tmrShot.Interval = Settings.Default.ShotInterval * 1000;
+            if (form.ShowDialog() == DialogResult.OK)
+                tmrShot.Interval = Settings.Default.ShotInterval * 1000;
 
-            StartTimer();
+            TopMost = true;
         }
 
         private void tsbPlay_Click(object sender, EventArgs e)
         {
             if (tmrShot.Enabled)
-                StopTimer();
+                StopTakingShot();
             else
-                StartTimer();
+                StartTakingShot();
         }
 
-        private void StopTimer()
+        private void StopTakingShot()
         {
 //            WindowState = FormWindowState.Normal;
             tmrShot.Enabled = false;
@@ -112,7 +124,7 @@ if (Screen.AllScreens.Length > 1)
             tsbPlay.Image = Resources.Play;
         }
 
-        private void StartTimer()
+        private void StartTakingShot()
         {
 //            WindowState = FormWindowState.Minimized;
             tmrShot.Enabled = true;
@@ -120,32 +132,14 @@ if (Screen.AllScreens.Length > 1)
             tsbPlay.Image = Resources.Pause;
         }
 
-        private void tsbNote_Click(object sender, EventArgs e)
+        private void txtNote_Enter(object sender, EventArgs e)
         {
-            StopTimer();
-
-            grbNote.Enabled = true;
-
-            if (Clipboard.GetData(DataFormats.Text) is string clipboardText)
-                txtNote.Text = clipboardText;
-
-            txtNote.Focus();
+            StopTakingShot();
         }
 
-        private void btnAddNote_Click(object sender, EventArgs e)
+        private void txtNote_Leave(object sender, EventArgs e)
         {
-            _node = new Note(rdbText.Checked ? NoteType.Text : NoteType.Url, txtNote.Text);
-            grbNote.Enabled = false;
-
-            StartTimer();
-        }
-
-        private void btnCancelNote_Click(object sender, EventArgs e)
-        {
-            txtNote.Text = string.Empty;
-            grbNote.Enabled = false;
-
-            StartTimer();
+            StartTakingShot();
         }
     }
 }

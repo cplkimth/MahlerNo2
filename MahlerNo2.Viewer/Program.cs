@@ -2,6 +2,7 @@
 
 using System;
 using System.Windows.Forms;
+using MahlerNo2.Viewer.Forms;
 
 #endregion
 
@@ -20,7 +21,7 @@ namespace MahlerNo2.Viewer
 
             OnRunTime = true;
 
-            Application.Run(new Form1());
+            Application.Run(new MainForm());
         }
 
         public static bool OnRunTime { get; private set; }

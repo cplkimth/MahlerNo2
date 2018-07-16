@@ -5,7 +5,7 @@ using MahlerNo2.Recorder.Controls;
 
 namespace MahlerNo2.Recorder.Forms
 {
-    public partial class ScreenSelectionForm : Form
+    public partial class ScreenSelectionForm : RecorderBaseForm
     {
         public ScreenSelectionForm()
         {

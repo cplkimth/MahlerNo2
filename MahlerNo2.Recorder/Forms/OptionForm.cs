@@ -5,14 +5,14 @@ using MahlerNo2.Recorder.Properties;
 
 namespace MahlerNo2.Recorder.Forms
 {
-    public partial class OptionForm : BaseForm
+    public partial class OptionForm : RecorderBaseForm
     {
         private OptionForm()
         {
             InitializeComponent();
         }
 
-        private MainForm _mainForm;
+        private readonly MainForm _mainForm;
 
         public OptionForm(MainForm mainForm) : this()
         {

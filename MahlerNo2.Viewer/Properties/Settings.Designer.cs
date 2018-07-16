@@ -25,13 +25,37 @@ namespace MahlerNo2.Viewer.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string ShotRoot {
+        [global::System.Configuration.DefaultSettingValueAttribute("D:\\sync\\pc\\MahlerNo2_Shots")]
+        public string ShotFolder {
             get {
-                return ((string)(this["ShotRoot"]));
+                return ((string)(this["ShotFolder"]));
             }
             set {
-                this["ShotRoot"] = value;
+                this["ShotFolder"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("10")]
+        public int FarMoveStep {
+            get {
+                return ((int)(this["FarMoveStep"]));
+            }
+            set {
+                this["FarMoveStep"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool KeepRatio {
+            get {
+                return ((bool)(this["KeepRatio"]));
+            }
+            set {
+                this["KeepRatio"] = value;
             }
         }
     }

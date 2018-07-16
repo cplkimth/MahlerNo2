@@ -2,8 +2,14 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="MahlerNo2.Viewer.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="ShotRoot" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+    <Setting Name="ShotFolder" Type="System.String" Scope="User">
+      <Value Profile="(Default)">D:\sync\pc\MahlerNo2_Shots</Value>
+    </Setting>
+    <Setting Name="FarMoveStep" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">10</Value>
+    </Setting>
+    <Setting Name="KeepRatio" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
     </Setting>
   </Settings>
 </SettingsFile>

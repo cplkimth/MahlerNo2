@@ -25,7 +25,7 @@ namespace MahlerNo2.Recorder.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        [global::System.Configuration.DefaultSettingValueAttribute("3")]
         public int ShotInterval {
             get {
                 return ((int)(this["ShotInterval"]));
@@ -37,7 +37,7 @@ namespace MahlerNo2.Recorder.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("D:\\sync\\pc\\Resurrection")]
+        [global::System.Configuration.DefaultSettingValueAttribute("D:\\sync\\pc\\MahlerNo2_Shots")]
         public string ShotRoot {
             get {
                 return ((string)(this["ShotRoot"]));
@@ -49,7 +49,7 @@ namespace MahlerNo2.Recorder.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("100")]
+        [global::System.Configuration.DefaultSettingValueAttribute("50")]
         public int Opacity {
             get {
                 return ((int)(this["Opacity"]));

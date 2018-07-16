@@ -3,13 +3,13 @@
   <Profiles />
   <Settings>
     <Setting Name="ShotInterval" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">1</Value>
+      <Value Profile="(Default)">3</Value>
     </Setting>
     <Setting Name="ShotRoot" Type="System.String" Scope="User">
-      <Value Profile="(Default)">D:\sync\pc\Resurrection</Value>
+      <Value Profile="(Default)">D:\sync\pc\MahlerNo2_Shots</Value>
     </Setting>
     <Setting Name="Opacity" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">100</Value>
+      <Value Profile="(Default)">50</Value>
     </Setting>
   </Settings>
 </SettingsFile>
