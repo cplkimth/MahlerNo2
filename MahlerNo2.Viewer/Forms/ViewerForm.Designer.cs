@@ -29,28 +29,28 @@
         private void InitializeComponent()
         {
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.txtTime = new System.Windows.Forms.ToolStripTextBox();
-            this.prbProgress = new System.Windows.Forms.ToolStripProgressBar();
-            this.txtIndex = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.txtNote = new System.Windows.Forms.ToolStripTextBox();
-            this.bgwShotLoader = new System.ComponentModel.BackgroundWorker();
-            this.ptbShot = new System.Windows.Forms.PictureBox();
             this.btnRefresh = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.btnRatio = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.btnFirst = new System.Windows.Forms.ToolStripButton();
             this.btnFarPrevious = new System.Windows.Forms.ToolStripButton();
             this.btnPrevious = new System.Windows.Forms.ToolStripButton();
+            this.txtTime = new System.Windows.Forms.ToolStripTextBox();
+            this.prbProgress = new System.Windows.Forms.ToolStripProgressBar();
+            this.txtIndex = new System.Windows.Forms.ToolStripTextBox();
             this.btnNext = new System.Windows.Forms.ToolStripButton();
             this.btnFarNext = new System.Windows.Forms.ToolStripButton();
             this.btnLast = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.btnPreviousNote = new System.Windows.Forms.ToolStripButton();
             this.btnNextNote = new System.Windows.Forms.ToolStripButton();
+            this.txtNote = new System.Windows.Forms.ToolStripTextBox();
+            this.btnNote = new System.Windows.Forms.ToolStripButton();
             this.btnBrowse = new System.Windows.Forms.ToolStripButton();
             this.btnExit = new System.Windows.Forms.ToolStripButton();
-            this.btnNote = new System.Windows.Forms.ToolStripButton();
+            this.bgwShotLoader = new System.ComponentModel.BackgroundWorker();
+            this.ptbShot = new System.Windows.Forms.PictureBox();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbShot)).BeginInit();
             this.SuspendLayout();
@@ -84,63 +84,6 @@
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // txtTime
-            // 
-            this.txtTime.Name = "txtTime";
-            this.txtTime.ReadOnly = true;
-            this.txtTime.Size = new System.Drawing.Size(60, 25);
-            this.txtTime.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // prbProgress
-            // 
-            this.prbProgress.MarqueeAnimationSpeed = 30;
-            this.prbProgress.Name = "prbProgress";
-            this.prbProgress.Size = new System.Drawing.Size(60, 22);
-            this.prbProgress.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            // 
-            // txtIndex
-            // 
-            this.txtIndex.Name = "txtIndex";
-            this.txtIndex.ReadOnly = true;
-            this.txtIndex.Size = new System.Drawing.Size(80, 25);
-            this.txtIndex.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // txtNote
-            // 
-            this.txtNote.Name = "txtNote";
-            this.txtNote.ReadOnly = true;
-            this.txtNote.Size = new System.Drawing.Size(500, 25);
-            // 
-            // bgwShotLoader
-            // 
-            this.bgwShotLoader.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwShotLoader_DoWork);
-            this.bgwShotLoader.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwShotLoader_RunWorkerCompleted);
-            // 
-            // ptbShot
-            // 
-            this.ptbShot.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ptbShot.Location = new System.Drawing.Point(0, 25);
-            this.ptbShot.Name = "ptbShot";
-            this.ptbShot.Size = new System.Drawing.Size(1184, 425);
-            this.ptbShot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ptbShot.TabIndex = 2;
-            this.ptbShot.TabStop = false;
-            // 
             // btnRefresh
             // 
             this.btnRefresh.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -151,6 +94,11 @@
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.ToolTipText = "Ctrl+R";
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
             // 
             // btnRatio
             // 
@@ -163,6 +111,11 @@
             this.btnRatio.Text = "비율 유지";
             this.btnRatio.ToolTipText = "Ctrl+T";
             this.btnRatio.Click += new System.EventHandler(this.btnRatio_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // btnFirst
             // 
@@ -199,6 +152,27 @@
             this.btnPrevious.ToolTipText = "Left";
             this.btnPrevious.Click += new System.EventHandler(this.btnMove_Click);
             // 
+            // txtTime
+            // 
+            this.txtTime.Name = "txtTime";
+            this.txtTime.ReadOnly = true;
+            this.txtTime.Size = new System.Drawing.Size(60, 25);
+            this.txtTime.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // prbProgress
+            // 
+            this.prbProgress.MarqueeAnimationSpeed = 30;
+            this.prbProgress.Name = "prbProgress";
+            this.prbProgress.Size = new System.Drawing.Size(60, 22);
+            this.prbProgress.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            // 
+            // txtIndex
+            // 
+            this.txtIndex.Name = "txtIndex";
+            this.txtIndex.ReadOnly = true;
+            this.txtIndex.Size = new System.Drawing.Size(80, 25);
+            this.txtIndex.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // btnNext
             // 
             this.btnNext.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -234,6 +208,11 @@
             this.btnLast.ToolTipText = "End / Ctrl+Shift+Right";
             this.btnLast.Click += new System.EventHandler(this.btnMove_Click);
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
             // btnPreviousNote
             // 
             this.btnPreviousNote.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -255,6 +234,23 @@
             this.btnNextNote.Text = "Next Note";
             this.btnNextNote.ToolTipText = "Alt+Right";
             this.btnNextNote.Click += new System.EventHandler(this.btnMoveNote_Click);
+            // 
+            // txtNote
+            // 
+            this.txtNote.Name = "txtNote";
+            this.txtNote.ReadOnly = true;
+            this.txtNote.Size = new System.Drawing.Size(500, 25);
+            // 
+            // btnNote
+            // 
+            this.btnNote.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnNote.Image = global::MahlerNo2.Viewer.Properties.Resources.Note;
+            this.btnNote.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnNote.Name = "btnNote";
+            this.btnNote.Size = new System.Drawing.Size(23, 22);
+            this.btnNote.Text = "Note";
+            this.btnNote.ToolTipText = "Ctrl+N";
+            this.btnNote.Click += new System.EventHandler(this.btnNote_Click);
             // 
             // btnBrowse
             // 
@@ -279,16 +275,20 @@
             this.btnExit.ToolTipText = "Esc";
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // btnNote
+            // bgwShotLoader
             // 
-            this.btnNote.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnNote.Image = global::MahlerNo2.Viewer.Properties.Resources.Note;
-            this.btnNote.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnNote.Name = "btnNote";
-            this.btnNote.Size = new System.Drawing.Size(23, 22);
-            this.btnNote.Text = "Note";
-            this.btnNote.ToolTipText = "Ctrl+N";
-            this.btnNote.Click += new System.EventHandler(this.btnNote_Click);
+            this.bgwShotLoader.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwShotLoader_DoWork);
+            this.bgwShotLoader.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwShotLoader_RunWorkerCompleted);
+            // 
+            // ptbShot
+            // 
+            this.ptbShot.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ptbShot.Location = new System.Drawing.Point(0, 25);
+            this.ptbShot.Name = "ptbShot";
+            this.ptbShot.Size = new System.Drawing.Size(1184, 425);
+            this.ptbShot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptbShot.TabIndex = 2;
+            this.ptbShot.TabStop = false;
             // 
             // ViewerForm
             // 
@@ -297,7 +297,7 @@
             this.ClientSize = new System.Drawing.Size(1184, 450);
             this.Controls.Add(this.ptbShot);
             this.Controls.Add(this.toolStrip1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.DoubleBuffered = true;
             this.Name = "ViewerForm";
             this.Text = "ViewerForm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
