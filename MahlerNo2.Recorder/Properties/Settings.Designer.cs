@@ -58,5 +58,17 @@ namespace MahlerNo2.Recorder.Properties {
                 this["Opacity"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("5")]
+        public int MaxPreviousShots {
+            get {
+                return ((int)(this["MaxPreviousShots"]));
+            }
+            set {
+                this["MaxPreviousShots"] = value;
+            }
+        }
     }
 }

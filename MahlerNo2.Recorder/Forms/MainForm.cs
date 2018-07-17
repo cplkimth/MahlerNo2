@@ -19,7 +19,7 @@ namespace MahlerNo2.Recorder.Forms
             KeyboardHook.Hook(Core.Components.ModifierKeys.Control, Keys.F12,
                 (sender, args) => tsbPlay.PerformClick());
         }
-        
+
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             switch (keyData)
@@ -82,19 +82,19 @@ if (Screen.AllScreens.Length > 1)
 
             var bytes = ScreenShotTaker.Instance.ShotSelectedScreen();
 
-            if (bytes != null)
-            {
-                var filePath = Path.Combine(directory, fileNameWithoutExtension + Utility.ImageFileExtension);
-                File.WriteAllBytes(filePath, bytes);
-            }
+            if (bytes == null)
+                return;
 
-            if (txtNote.Text != string.Empty)
-            {
-                var filePath = Path.Combine(directory, fileNameWithoutExtension + Utility.NoteFileExtension);
-                File.WriteAllText(filePath, txtNote.Text);
+            var filePath = Path.Combine(directory, fileNameWithoutExtension + Utility.ImageFileExtension);
+            File.WriteAllBytes(filePath, bytes);
 
-                txtNote.Text = string.Empty;
-            }
+            if (txtNote.Text == string.Empty) 
+                return;
+
+            filePath = Path.Combine(directory, fileNameWithoutExtension + Utility.NoteFileExtension);
+            File.WriteAllText(filePath, txtNote.Text);
+
+            txtNote.Text = string.Empty;
         }
 
         private void tsbOption_Click(object sender, EventArgs e)
@@ -118,7 +118,7 @@ if (Screen.AllScreens.Length > 1)
 
         private void StopTakingShot()
         {
-//            WindowState = FormWindowState.Normal;
+            //            WindowState = FormWindowState.Normal;
             tmrShot.Enabled = false;
             Text = PlayFormText;
             tsbPlay.Image = Resources.Play;
@@ -126,7 +126,7 @@ if (Screen.AllScreens.Length > 1)
 
         private void StartTakingShot()
         {
-//            WindowState = FormWindowState.Minimized;
+            //            WindowState = FormWindowState.Minimized;
             tmrShot.Enabled = true;
             Text = PauseFormText;
             tsbPlay.Image = Resources.Pause;

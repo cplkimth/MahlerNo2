@@ -27,6 +27,7 @@ namespace MahlerNo2.Recorder.Forms
                 return;
 
             nupShotInterval.Value = Settings.Default.ShotInterval;
+            nupMaxPreviousShot.Value = Settings.Default.MaxPreviousShots;
             txtShotPath.Text = Settings.Default.ShotRoot;
             trbOpacity.Value = Settings.Default.Opacity;
         }
@@ -34,6 +35,7 @@ namespace MahlerNo2.Recorder.Forms
         private void btnOK_Click(object sender, EventArgs e)
         {
             Settings.Default.ShotInterval = Convert.ToInt32(nupShotInterval.Value);
+            Settings.Default.MaxPreviousShots = Convert.ToInt32(nupMaxPreviousShot.Value);
             Settings.Default.ShotRoot = txtShotPath.Text.Trim();
             Settings.Default.Opacity = trbOpacity.Value;
             Settings.Default.Save();

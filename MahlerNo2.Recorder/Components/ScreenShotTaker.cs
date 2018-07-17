@@ -1,7 +1,10 @@
-﻿using System.Drawing;
+﻿using System.Collections.Generic;
+using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Windows.Forms;
+using System.Linq;
+using MahlerNo2.Recorder.Properties;
 
 namespace MahlerNo2.Recorder.Components
 {
@@ -19,6 +22,18 @@ namespace MahlerNo2.Recorder.Components
             var ms = new MemoryStream(bytes);
             var image = Image.FromStream(ms);
             return image;
+        }
+
+        public static bool IsEqual(this byte[] source, byte[] target)
+        {
+            if (source.Length != target.Length)
+                return false;
+
+            for (int i = 0; i < source.Length; i++)
+                if (source[i] != target[i])
+                    return false;
+
+            return true;
         }
     }
 
@@ -62,8 +77,11 @@ namespace MahlerNo2.Recorder.Components
 
             if (IsNewBytes(bytes))
             {
-                _lastBytes = bytes;
-                return _lastBytes;
+                _previousBytes.Enqueue(bytes);
+                if (_previousBytes.Count > Settings.Default.MaxPreviousShots)
+                    _previousBytes.Dequeue();
+
+                return bytes;
             }
 
             return null;
@@ -71,16 +89,9 @@ namespace MahlerNo2.Recorder.Components
 
         private bool IsNewBytes(byte[] bytes)
         {
-            if (_lastBytes.Length != bytes.Length)
-                return true;
-
-            for (int i = 0; i < bytes.Length; i++)
-                if (_lastBytes[i] != bytes[i])
-                    return true;
-
-            return false;
+            return _previousBytes.All(x => x.IsEqual(bytes) == false);
         }
 
-        private byte[] _lastBytes = new byte[0];
+        private readonly Queue<byte[]> _previousBytes = new Queue<byte[]>();
     }
 }
