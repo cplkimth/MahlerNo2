@@ -34,6 +34,7 @@
             this.btnRatio = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.btnFirst = new System.Windows.Forms.ToolStripButton();
+            this.btnFarFarPrevious = new System.Windows.Forms.ToolStripButton();
             this.btnFarPrevious = new System.Windows.Forms.ToolStripButton();
             this.btnPrevious = new System.Windows.Forms.ToolStripButton();
             this.txtTime = new System.Windows.Forms.ToolStripTextBox();
@@ -41,6 +42,7 @@
             this.txtIndex = new System.Windows.Forms.ToolStripTextBox();
             this.btnNext = new System.Windows.Forms.ToolStripButton();
             this.btnFarNext = new System.Windows.Forms.ToolStripButton();
+            this.btnFarFarNext = new System.Windows.Forms.ToolStripButton();
             this.btnLast = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.btnPreviousNote = new System.Windows.Forms.ToolStripButton();
@@ -63,6 +65,7 @@
             this.btnRatio,
             this.toolStripSeparator2,
             this.btnFirst,
+            this.btnFarFarPrevious,
             this.btnFarPrevious,
             this.btnPrevious,
             this.txtTime,
@@ -70,6 +73,7 @@
             this.txtIndex,
             this.btnNext,
             this.btnFarNext,
+            this.btnFarFarNext,
             this.btnLast,
             this.toolStripSeparator1,
             this.btnPreviousNote,
@@ -126,24 +130,35 @@
             this.btnFirst.Size = new System.Drawing.Size(23, 22);
             this.btnFirst.Tag = "-1000000";
             this.btnFirst.Text = "First";
-            this.btnFirst.ToolTipText = "HOME / Ctrl+Shift+Left";
+            this.btnFirst.ToolTipText = "HOME";
             this.btnFirst.Click += new System.EventHandler(this.btnMove_Click);
+            // 
+            // btnFarFarPrevious
+            // 
+            this.btnFarFarPrevious.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnFarFarPrevious.Image = global::MahlerNo2.Viewer.Properties.Resources.PPP;
+            this.btnFarFarPrevious.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnFarFarPrevious.Name = "btnFarFarPrevious";
+            this.btnFarFarPrevious.Size = new System.Drawing.Size(23, 22);
+            this.btnFarFarPrevious.Text = "toolStripButton1";
+            this.btnFarFarPrevious.ToolTipText = "Ctrl+Shift+Left";
+            this.btnFarFarPrevious.Click += new System.EventHandler(this.btnMove_Click);
             // 
             // btnFarPrevious
             // 
             this.btnFarPrevious.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnFarPrevious.Image = global::MahlerNo2.Viewer.Properties.Resources.FarPrevious;
+            this.btnFarPrevious.Image = global::MahlerNo2.Viewer.Properties.Resources.PP;
             this.btnFarPrevious.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnFarPrevious.Name = "btnFarPrevious";
             this.btnFarPrevious.Size = new System.Drawing.Size(23, 22);
             this.btnFarPrevious.Text = "Far Previous";
-            this.btnFarPrevious.ToolTipText = "PageUp / Ctrl+Left";
+            this.btnFarPrevious.ToolTipText = "Ctrl+Left";
             this.btnFarPrevious.Click += new System.EventHandler(this.btnMove_Click);
             // 
             // btnPrevious
             // 
             this.btnPrevious.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnPrevious.Image = global::MahlerNo2.Viewer.Properties.Resources.Previous;
+            this.btnPrevious.Image = global::MahlerNo2.Viewer.Properties.Resources.P;
             this.btnPrevious.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnPrevious.Name = "btnPrevious";
             this.btnPrevious.Size = new System.Drawing.Size(23, 22);
@@ -164,7 +179,6 @@
             this.prbProgress.MarqueeAnimationSpeed = 30;
             this.prbProgress.Name = "prbProgress";
             this.prbProgress.Size = new System.Drawing.Size(60, 22);
-            this.prbProgress.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             // 
             // txtIndex
             // 
@@ -176,7 +190,7 @@
             // btnNext
             // 
             this.btnNext.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnNext.Image = global::MahlerNo2.Viewer.Properties.Resources.Next;
+            this.btnNext.Image = global::MahlerNo2.Viewer.Properties.Resources.N;
             this.btnNext.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(23, 22);
@@ -188,13 +202,24 @@
             // btnFarNext
             // 
             this.btnFarNext.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnFarNext.Image = global::MahlerNo2.Viewer.Properties.Resources.FarNext;
+            this.btnFarNext.Image = global::MahlerNo2.Viewer.Properties.Resources.NN;
             this.btnFarNext.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnFarNext.Name = "btnFarNext";
             this.btnFarNext.Size = new System.Drawing.Size(23, 22);
             this.btnFarNext.Text = "Far Next";
-            this.btnFarNext.ToolTipText = "PageDown / Ctrl+Right";
+            this.btnFarNext.ToolTipText = "Ctrl+Right";
             this.btnFarNext.Click += new System.EventHandler(this.btnMove_Click);
+            // 
+            // btnFarFarNext
+            // 
+            this.btnFarFarNext.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnFarFarNext.Image = global::MahlerNo2.Viewer.Properties.Resources.NNN;
+            this.btnFarFarNext.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnFarFarNext.Name = "btnFarFarNext";
+            this.btnFarFarNext.Size = new System.Drawing.Size(23, 22);
+            this.btnFarFarNext.Text = "toolStripButton2";
+            this.btnFarFarNext.ToolTipText = "Ctrl+Shift+Right";
+            this.btnFarFarNext.Click += new System.EventHandler(this.btnMove_Click);
             // 
             // btnLast
             // 
@@ -205,7 +230,7 @@
             this.btnLast.Size = new System.Drawing.Size(23, 22);
             this.btnLast.Tag = "1000000";
             this.btnLast.Text = "Last";
-            this.btnLast.ToolTipText = "End / Ctrl+Shift+Right";
+            this.btnLast.ToolTipText = "End";
             this.btnLast.Click += new System.EventHandler(this.btnMove_Click);
             // 
             // toolStripSeparator1
@@ -298,6 +323,7 @@
             this.Controls.Add(this.ptbShot);
             this.Controls.Add(this.toolStrip1);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ViewerForm";
             this.Text = "ViewerForm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -333,6 +359,8 @@
         private System.Windows.Forms.ToolStripButton btnNextNote;
         private System.ComponentModel.BackgroundWorker bgwShotLoader;
         private System.Windows.Forms.ToolStripButton btnNote;
+        private System.Windows.Forms.ToolStripButton btnFarFarPrevious;
+        private System.Windows.Forms.ToolStripButton btnFarFarNext;
     }
 }
 

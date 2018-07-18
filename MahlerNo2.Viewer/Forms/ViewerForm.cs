@@ -19,6 +19,8 @@ namespace MahlerNo2.Viewer.Forms
 
             btnFarPrevious.Tag = (Settings.Default.FarMoveStep * -1).ToString();
             btnFarNext.Tag = (Settings.Default.FarMoveStep * 1).ToString();
+            btnFarFarPrevious.Tag = (Settings.Default.FarFarMoveStep * -1).ToString();
+            btnFarFarNext.Tag = (Settings.Default.FarFarMoveStep * 1).ToString();
 
             btnRatio.Checked = Settings.Default.KeepRatio;
         }
@@ -41,10 +43,12 @@ namespace MahlerNo2.Viewer.Forms
         private List<ToolStripButton> MoveButtons => new List<ToolStripButton>
         {
             btnFirst,
+            btnFarFarPrevious,
             btnFarPrevious,
             btnPrevious,
             btnNext,
             btnFarNext,
+            btnFarFarNext,
             btnLast
         };
 
@@ -52,6 +56,7 @@ namespace MahlerNo2.Viewer.Forms
         {
             btnFirst,
             btnFarPrevious,
+            btnFarFarPrevious,
             btnPrevious
         };
 
@@ -59,6 +64,7 @@ namespace MahlerNo2.Viewer.Forms
         {
             btnNext,
             btnFarNext,
+            btnFarFarNext,
             btnLast
         };
 
@@ -74,10 +80,11 @@ namespace MahlerNo2.Viewer.Forms
                     btnPrevious.PerformClick();
                     break;
                 case Keys.Control | Keys.Left:
-                case Keys.PageUp:
                     btnFarPrevious.PerformClick();
                     break;
                 case Keys.Control | Keys.Shift | Keys.Left:
+                    btnFarFarPrevious.PerformClick();
+                    break;
                 case Keys.Home:
                     btnFirst.PerformClick();
                     break;
@@ -85,10 +92,11 @@ namespace MahlerNo2.Viewer.Forms
                     btnNext.PerformClick();
                     break;
                 case Keys.Control | Keys.Right:
-                case Keys.PageDown:
                     btnFarNext.PerformClick();
                     break;
                 case Keys.Control | Keys.Shift | Keys.Right:
+                    btnFarFarNext.PerformClick();
+                    break;
                 case Keys.End:
                     btnLast.PerformClick();
                     break;
@@ -250,7 +258,7 @@ namespace MahlerNo2.Viewer.Forms
 
         private void bgwShotLoader_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            prbProgress.Style = ProgressBarStyle.Continuous;
+            prbProgress.Style = ProgressBarStyle.Blocks;
             Enabled = true;
 
             prbProgress.Maximum = _shots.Count;

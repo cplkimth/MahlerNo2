@@ -16,7 +16,7 @@ namespace MahlerNo2.Core.Components
         public static string GetProductVersion()
         {
             var version = Assembly.GetEntryAssembly().GetName().Version;
-            return $"{version.Major}.{version.Minor}";
+            return $"{version.Major}.{version.Minor}.{version.Build}";
         }
 
         public static DateTime ToDateTime(this FileInfo file)
