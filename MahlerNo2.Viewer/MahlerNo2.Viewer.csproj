@@ -50,17 +50,20 @@
   <ItemGroup>
     <Compile Include="Components\FormExtension.cs" />
     <Compile Include="Components\ShotFolder.cs" />
+    <Compile Include="Controls\MoveButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controls\TimePicker.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Controls\TimePicker.Designer.cs">
       <DependentUpon>TimePicker.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\NoteForm.cs">
+    <Compile Include="Forms\RemoconForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\NoteForm.Designer.cs">
-      <DependentUpon>NoteForm.cs</DependentUpon>
+    <Compile Include="Forms\RemoconForm.Designer.cs">
+      <DependentUpon>RemoconForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ViewerBaseForm.cs">
       <SubType>Form</SubType>
@@ -88,8 +91,8 @@
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\NoteForm.resx">
-      <DependentUpon>NoteForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\RemoconForm.resx">
+      <DependentUpon>RemoconForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ViewerForm.resx">
       <DependentUpon>ViewerForm.cs</DependentUpon>
@@ -192,6 +195,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Last.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Brighten.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Darken.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

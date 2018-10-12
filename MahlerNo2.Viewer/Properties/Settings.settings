@@ -5,14 +5,29 @@
     <Setting Name="ShotFolder" Type="System.String" Scope="User">
       <Value Profile="(Default)">D:\sync\MahlerNo2_Shots</Value>
     </Setting>
-    <Setting Name="FarMoveStep" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">10</Value>
-    </Setting>
     <Setting Name="KeepRatio" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="FarFarMoveStep" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">100</Value>
+    <Setting Name="NSecond" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">5</Value>
+    </Setting>
+    <Setting Name="PSecond" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">-5</Value>
+    </Setting>
+    <Setting Name="NNSecond" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">30</Value>
+    </Setting>
+    <Setting Name="PPSecond" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">-30</Value>
+    </Setting>
+    <Setting Name="NNNSecond" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">300</Value>
+    </Setting>
+    <Setting Name="PPPSecond" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">-300</Value>
+    </Setting>
+    <Setting Name="Opacity" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0.5</Value>
     </Setting>
   </Settings>
 </SettingsFile>

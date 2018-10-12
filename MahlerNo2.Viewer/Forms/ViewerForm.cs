@@ -17,10 +17,10 @@ namespace MahlerNo2.Viewer.Forms
         {
             InitializeComponent();
 
-            btnFarPrevious.Tag = (Settings.Default.FarMoveStep * -1).ToString();
-            btnFarNext.Tag = (Settings.Default.FarMoveStep * 1).ToString();
-            btnFarFarPrevious.Tag = (Settings.Default.FarFarMoveStep * -1).ToString();
-            btnFarFarNext.Tag = (Settings.Default.FarFarMoveStep * 1).ToString();
+//            btnFarPrevious.Tag = (Settings.Default.NSecond * -1).ToString();
+//            btnFarNext.Tag = (Settings.Default.FarMoveStep * 1).ToString();
+//            btnFarFarPrevious.Tag = (Settings.Default.FarFarMoveStep * -1).ToString();
+//            btnFarFarNext.Tag = (Settings.Default.FarFarMoveStep * 1).ToString();
 
             btnRatio.Checked = Settings.Default.KeepRatio;
         }
@@ -69,71 +69,6 @@ namespace MahlerNo2.Viewer.Forms
         };
 
         #endregion
-
-        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
-        {
-            switch (keyData)
-            {
-                #region move
-
-                case Keys.Left:
-                    btnPrevious.PerformClick();
-                    break;
-                case Keys.Control | Keys.Left:
-                    btnFarPrevious.PerformClick();
-                    break;
-                case Keys.Control | Keys.Shift | Keys.Left:
-                    btnFarFarPrevious.PerformClick();
-                    break;
-                case Keys.Home:
-                    btnFirst.PerformClick();
-                    break;
-                case Keys.Right:
-                    btnNext.PerformClick();
-                    break;
-                case Keys.Control | Keys.Right:
-                    btnFarNext.PerformClick();
-                    break;
-                case Keys.Control | Keys.Shift | Keys.Right:
-                    btnFarFarNext.PerformClick();
-                    break;
-                case Keys.End:
-                    btnLast.PerformClick();
-                    break;
-
-                #endregion
-
-                #region Note Move
-
-                case Keys.Alt | Keys.Left:
-                    btnPreviousNote.PerformClick();
-                    break;
-                case Keys.Alt | Keys.Right:
-                    btnNextNote.PerformClick();
-                    break;
-
-                #endregion
-
-                case Keys.Escape:
-                    btnExit.PerformClick();
-                    Close();
-                    break;
-                case Keys.Control | Keys.B:
-                    btnBrowse.PerformClick();
-                    break;
-                case Keys.Control | Keys.R:
-                    btnRefresh.PerformClick();
-                    break;
-                case Keys.Control | Keys.T:
-                    btnRatio.PerformClick();
-                    break;
-                case Keys.Control | Keys.N:
-                    btnNote.PerformClick();
-                    break;
-            }
-
-            return base.ProcessCmdKey(ref msg, keyData);
-        }
 
         protected override void OnShown(EventArgs e)
         {
@@ -267,12 +202,6 @@ namespace MahlerNo2.Viewer.Forms
             _shotIndex = _shots.Count == 0 ? -1 : 0;
 
             LoadCurrentShot();
-        }
-
-        private void btnNote_Click(object sender, EventArgs e)
-        {
-            var form = new NoteForm(CurrentShot.Note);
-            form.ShowDialog();
         }
     }
 }
