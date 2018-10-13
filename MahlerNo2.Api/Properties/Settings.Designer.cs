@@ -23,39 +23,51 @@ namespace MahlerNo2.Api.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("D:\\MahlerNo2_Shots\\")]
         public string ShotRoot {
             get {
                 return ((string)(this["ShotRoot"]));
             }
+            set {
+                this["ShotRoot"] = value;
+            }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("10.10.14.99")]
         public string IP {
             get {
                 return ((string)(this["IP"]));
             }
+            set {
+                this["IP"] = value;
+            }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("3512")]
         public int Port {
             get {
                 return ((int)(this["Port"]));
             }
+            set {
+                this["Port"] = value;
+            }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("300")]
         public int CacheSecond {
             get {
                 return ((int)(this["CacheSecond"]));
+            }
+            set {
+                this["CacheSecond"] = value;
             }
         }
     }

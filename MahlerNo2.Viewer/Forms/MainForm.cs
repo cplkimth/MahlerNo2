@@ -1,10 +1,12 @@
-﻿using System;
-using System.IO;
-using System.Linq;
+﻿#region using
+
+using System;
 using System.Windows.Forms;
 using MahlerNo2.Core.Components;
 using MahlerNo2.Viewer.Components;
 using MahlerNo2.Viewer.Properties;
+
+#endregion
 
 namespace MahlerNo2.Viewer.Forms
 {
@@ -22,46 +24,29 @@ namespace MahlerNo2.Viewer.Forms
             if (DesignMode || Program.OnRunTime == false)
                 return;
 
-            txtShotFolder.Text = Settings.Default.ShotFolder;
-
-            LoadDirectories();
-
-            Text += @" - " + Utility.GetProductVersion();
+            txtVersion.Text += Utility.GetProductVersion();
+            txtIP.Text = Settings.Default.IP;
+            txtPort.Text = Settings.Default.Port.ToString();
         }
 
         private void dgvList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             var text = (string) dgvList[e.ColumnIndex, e.RowIndex].Value;
             var date = DateTime.ParseExact(text, Utility.DateFormat, null);
-            Form form = new ViewerFormEx(date);
+            
+            Hide();
+            Form form = new ShotForm(date);
             form.ShowDialog();
+            Show();
         }
 
-        private void btnBrowse_Click(object sender, EventArgs e)
+        private void btnConnect_Click(object sender, EventArgs e)
         {
-            if (fbdShotFolder.ShowDialog() != DialogResult.OK)
-                return;
-
-            txtShotFolder.Text = fbdShotFolder.SelectedPath;
-
-            LoadDirectories();
-        }
-
-        private void LoadDirectories()
-        {
-            if (!Directory.Exists(txtShotFolder.Text))
-                return;
-
-            Settings.Default.ShotFolder = txtShotFolder.Text;
-
-            var root = new DirectoryInfo(txtShotFolder.Text);
-            var shotFolders = root.EnumerateDirectories()
-                .Where(x => x.IsValidDate())
-                .OrderByDescending(x => x.Name)
-                .Select(x => new ShotFolder(x.Name))
-                .ToList();
-
             bdsShotFolder.DataSource = ApiClient.Instance.GetDateList().ConvertAll(x => new ShotFolder(x));
+
+            Settings.Default.IP = txtIP.Text;
+            Settings.Default.Port = int.Parse(txtPort.Text);
+            Settings.Default.Save();
         }
     }
 }

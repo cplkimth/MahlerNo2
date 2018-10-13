@@ -54,20 +54,17 @@
     <Compile Include="Components\ApiClient.cs" />
     <Compile Include="Components\FormExtension.cs" />
     <Compile Include="Components\ShotFolder.cs" />
-    <Compile Include="Controls\MoveButton.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Controls\RemoconControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Controls\RemoconControl.Designer.cs">
       <DependentUpon>RemoconControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\TimePicker.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="Forms\ShotForm.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Controls\TimePicker.Designer.cs">
-      <DependentUpon>TimePicker.cs</DependentUpon>
+    <Compile Include="Forms\ShotForm.Designer.cs">
+      <DependentUpon>ShotForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ViewerBaseForm.cs">
       <SubType>Form</SubType>
@@ -81,25 +78,16 @@
     <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ViewerFormEx.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\ViewerFormEx.Designer.cs">
-      <DependentUpon>ViewerFormEx.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Controls\RemoconControl.resx">
       <DependentUpon>RemoconControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\TimePicker.resx">
-      <DependentUpon>TimePicker.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ViewerFormEx.resx">
-      <DependentUpon>ViewerFormEx.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\ShotForm.resx">
+      <DependentUpon>ShotForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -142,70 +130,49 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\FarNext.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\FarPrevious.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Next.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Previous.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Browser.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Ratio.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Escape.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Refresh.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\NextNote.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\PreviousNote.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Note.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Mahler.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\N.png" />
+    <None Include="Resources\Control.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\NN.png" />
+    <None Include="Resources\Down.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\NNN.png" />
+    <None Include="Resources\Left.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\P.png" />
+    <None Include="Resources\Minus.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\PP.png" />
+    <None Include="Resources\Right.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\PPP.png" />
+    <None Include="Resources\Shift.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\First.png" />
+    <None Include="Resources\Up.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Last.png" />
+    <None Include="Resources\Plus.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Brighten.png" />
+    <None Include="Resources\Num8.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Darken.png" />
+    <None Include="Resources\Num9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\A.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

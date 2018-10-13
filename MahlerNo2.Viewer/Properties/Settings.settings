@@ -2,38 +2,17 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="MahlerNo2.Viewer.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="ShotFolder" Type="System.String" Scope="User">
-      <Value Profile="(Default)">D:\sync\MahlerNo2_Shots</Value>
-    </Setting>
-    <Setting Name="KeepRatio" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
-    </Setting>
-    <Setting Name="NSecond" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">5</Value>
-    </Setting>
-    <Setting Name="PSecond" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">-5</Value>
-    </Setting>
-    <Setting Name="NNSecond" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">30</Value>
-    </Setting>
-    <Setting Name="PPSecond" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">-30</Value>
-    </Setting>
-    <Setting Name="NNNSecond" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">300</Value>
-    </Setting>
-    <Setting Name="PPPSecond" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">-300</Value>
-    </Setting>
     <Setting Name="Opacity" Type="System.Double" Scope="User">
-      <Value Profile="(Default)">0.5</Value>
+      <Value Profile="(Default)">1</Value>
     </Setting>
-    <Setting Name="IP" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">10.10.14.99</Value>
+    <Setting Name="IP" Type="System.String" Scope="User">
+      <Value Profile="(Default)">175.198.24.39</Value>
     </Setting>
-    <Setting Name="Port" Type="System.Int32" Scope="Application">
+    <Setting Name="Port" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">3512</Value>
+    </Setting>
+    <Setting Name="SizeMode" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">4</Value>
     </Setting>
   </Settings>
 </SettingsFile>

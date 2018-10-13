@@ -25,103 +25,7 @@ namespace MahlerNo2.Viewer.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("D:\\sync\\MahlerNo2_Shots")]
-        public string ShotFolder {
-            get {
-                return ((string)(this["ShotFolder"]));
-            }
-            set {
-                this["ShotFolder"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool KeepRatio {
-            get {
-                return ((bool)(this["KeepRatio"]));
-            }
-            set {
-                this["KeepRatio"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("5")]
-        public int NSecond {
-            get {
-                return ((int)(this["NSecond"]));
-            }
-            set {
-                this["NSecond"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("-5")]
-        public int PSecond {
-            get {
-                return ((int)(this["PSecond"]));
-            }
-            set {
-                this["PSecond"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("30")]
-        public int NNSecond {
-            get {
-                return ((int)(this["NNSecond"]));
-            }
-            set {
-                this["NNSecond"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("-30")]
-        public int PPSecond {
-            get {
-                return ((int)(this["PPSecond"]));
-            }
-            set {
-                this["PPSecond"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("300")]
-        public int NNNSecond {
-            get {
-                return ((int)(this["NNNSecond"]));
-            }
-            set {
-                this["NNNSecond"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("-300")]
-        public int PPPSecond {
-            get {
-                return ((int)(this["PPPSecond"]));
-            }
-            set {
-                this["PPPSecond"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0.5")]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
         public double Opacity {
             get {
                 return ((double)(this["Opacity"]));
@@ -131,21 +35,39 @@ namespace MahlerNo2.Viewer.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("10.10.14.99")]
+        [global::System.Configuration.DefaultSettingValueAttribute("175.198.24.39")]
         public string IP {
             get {
                 return ((string)(this["IP"]));
             }
+            set {
+                this["IP"] = value;
+            }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("3512")]
         public int Port {
             get {
                 return ((int)(this["Port"]));
+            }
+            set {
+                this["Port"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("4")]
+        public int SizeMode {
+            get {
+                return ((int)(this["SizeMode"]));
+            }
+            set {
+                this["SizeMode"] = value;
             }
         }
     }

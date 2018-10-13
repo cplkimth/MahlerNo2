@@ -1,6 +1,6 @@
 ﻿namespace MahlerNo2.Viewer.Forms
 {
-    partial class ViewerFormEx
+    partial class ShotForm
     {
         /// <summary>
         /// Required designer variable.
@@ -40,8 +40,8 @@
             this.ptbShot.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ptbShot.Location = new System.Drawing.Point(0, 0);
             this.ptbShot.Name = "ptbShot";
-            this.ptbShot.Size = new System.Drawing.Size(783, 812);
-            this.ptbShot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.ptbShot.Size = new System.Drawing.Size(911, 812);
+            this.ptbShot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ptbShot.TabIndex = 0;
             this.ptbShot.TabStop = false;
             // 
@@ -52,8 +52,6 @@
             this.uscRemocon.Name = "uscRemocon";
             this.uscRemocon.Size = new System.Drawing.Size(128, 812);
             this.uscRemocon.TabIndex = 4;
-            this.uscRemocon.TimeChanged += new System.EventHandler<MahlerNo2.Viewer.Controls.RemoconControl.TimeChangedEventArgs>(this.uscRemocon_TimeChanged);
-            this.uscRemocon.OpacityChanging += new System.EventHandler<MahlerNo2.Viewer.Controls.RemoconControl.OpacityChangingEventArgs>(this.uscRemocon_OpacityChanging);
             // 
             // panel1
             // 
@@ -61,22 +59,21 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(783, 812);
+            this.panel1.Size = new System.Drawing.Size(911, 812);
             this.panel1.TabIndex = 5;
             // 
-            // ViewerFormEx
+            // ShotForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(911, 812);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.uscRemocon);
-            this.Name = "ViewerFormEx";
-            this.Text = "ViewerFormEx";
+            this.Controls.Add(this.panel1);
+            this.Name = "ShotForm";
+            this.Text = "MahlerNo2.Viewer";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.ptbShot)).EndInit();
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }

@@ -2,16 +2,16 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="MahlerNo2.Api.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="ShotRoot" Type="System.String" Scope="Application">
+    <Setting Name="ShotRoot" Type="System.String" Scope="User">
       <Value Profile="(Default)">D:\MahlerNo2_Shots\</Value>
     </Setting>
-    <Setting Name="IP" Type="System.String" Scope="Application">
+    <Setting Name="IP" Type="System.String" Scope="User">
       <Value Profile="(Default)">10.10.14.99</Value>
     </Setting>
-    <Setting Name="Port" Type="System.Int32" Scope="Application">
+    <Setting Name="Port" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">3512</Value>
     </Setting>
-    <Setting Name="CacheSecond" Type="System.Int32" Scope="Application">
+    <Setting Name="CacheSecond" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">300</Value>
     </Setting>
   </Settings>
