@@ -49,5 +49,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MahlerNo2.Viewer\MahlerNo2.Viewer.csproj">
+      <Project>{C3850A22-E996-4DC2-A4C7-C141B84CD0DA}</Project>
+      <Name>MahlerNo2.Viewer</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

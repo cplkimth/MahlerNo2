@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MahlerNo2.ConsoleTest", "Ma
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{83F92B2F-8A97-41DE-8707-99774AA62096}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MahlerNo2.Api", "MahlerNo2.Api\MahlerNo2.Api.csproj", "{0E72C85F-41DB-4B56-88DF-6CBB5BF2C021}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,7 +24,6 @@ Global
 		{C3850A22-E996-4DC2-A4C7-C141B84CD0DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C3850A22-E996-4DC2-A4C7-C141B84CD0DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C3850A22-E996-4DC2-A4C7-C141B84CD0DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C3850A22-E996-4DC2-A4C7-C141B84CD0DA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D90F2E9D-701A-462D-B8F0-17BCD5E70E68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D90F2E9D-701A-462D-B8F0-17BCD5E70E68}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D90F2E9D-701A-462D-B8F0-17BCD5E70E68}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -35,6 +36,10 @@ Global
 		{1AC50C83-2A23-455B-90B4-1E131C452E74}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1AC50C83-2A23-455B-90B4-1E131C452E74}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1AC50C83-2A23-455B-90B4-1E131C452E74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E72C85F-41DB-4B56-88DF-6CBB5BF2C021}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E72C85F-41DB-4B56-88DF-6CBB5BF2C021}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E72C85F-41DB-4B56-88DF-6CBB5BF2C021}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E72C85F-41DB-4B56-88DF-6CBB5BF2C021}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

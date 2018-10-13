@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MahlerNo2.Viewer.Components;
 
 namespace MahlerNo2.ConsoleTest
 {
@@ -11,8 +12,8 @@ namespace MahlerNo2.ConsoleTest
     {
         static void Main(string[] args)
         {
-            Keys.TryParse("-", out Keys key);
-            Console.WriteLine(key);
+            var list = ApiClient.Instance.GetDateList();
+            var bytes = ApiClient.Instance.GetShot("181013", "100000");
         }
     }
 }

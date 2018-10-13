@@ -33,7 +33,7 @@ namespace MahlerNo2.Viewer.Forms
         {
             var text = (string) dgvList[e.ColumnIndex, e.RowIndex].Value;
             var date = DateTime.ParseExact(text, Utility.DateFormat, null);
-            Form form = new ViewerForm(date);
+            Form form = new ViewerFormEx(date);
             form.ShowDialog();
         }
 
@@ -61,7 +61,7 @@ namespace MahlerNo2.Viewer.Forms
                 .Select(x => new ShotFolder(x.Name))
                 .ToList();
 
-            bdsShotFolder.DataSource = shotFolders;
+            bdsShotFolder.DataSource = ApiClient.Instance.GetDateList().ConvertAll(x => new ShotFolder(x));
         }
     }
 }

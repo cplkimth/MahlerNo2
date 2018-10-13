@@ -22,7 +22,8 @@ namespace MahlerNo2.Viewer
             OnRunTime = true;
 
 //            Application.Run(new MainForm());
-            Application.Run(new RemoconForm());
+            Application.Run(new ViewerFormEx(new DateTime(2018,10,12)));
+//            Application.Run(new RemoconForm());
         }
 
         public static bool OnRunTime { get; private set; }
