@@ -50,6 +50,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.mtbTime = new System.Windows.Forms.MaskedTextBox();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.pictureBox32 = new System.Windows.Forms.PictureBox();
+            this.pictureBox31 = new System.Windows.Forms.PictureBox();
+            this.pictureBox28 = new System.Windows.Forms.PictureBox();
             this.pictureBox27 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
@@ -78,14 +83,15 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.pictureBox28 = new System.Windows.Forms.PictureBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.pictureBox31 = new System.Windows.Forms.PictureBox();
-            this.pictureBox32 = new System.Windows.Forms.PictureBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.ptbOnline = new System.Windows.Forms.PictureBox();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox32)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox31)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -114,10 +120,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox31)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox32)).BeginInit();
+            this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbOnline)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox3
@@ -126,7 +130,7 @@
             this.groupBox3.Controls.Add(this.pictureBox27);
             this.groupBox3.Controls.Add(this.label15);
             this.groupBox3.Controls.Add(this.pictureBox7);
-            this.groupBox3.Location = new System.Drawing.Point(3, 508);
+            this.groupBox3.Location = new System.Drawing.Point(3, 590);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(121, 76);
             this.groupBox3.TabIndex = 17;
@@ -157,7 +161,7 @@
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.pictureBox8);
             this.groupBox2.Controls.Add(this.pictureBox4);
-            this.groupBox2.Location = new System.Drawing.Point(3, 421);
+            this.groupBox2.Location = new System.Drawing.Point(3, 503);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(121, 81);
             this.groupBox2.TabIndex = 16;
@@ -221,7 +225,7 @@
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.mtbTime);
-            this.groupBox1.Location = new System.Drawing.Point(3, 3);
+            this.groupBox1.Location = new System.Drawing.Point(3, 85);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(121, 412);
             this.groupBox1.TabIndex = 15;
@@ -352,6 +356,56 @@
             this.mtbTime.ValidatingType = typeof(System.DateTime);
             this.mtbTime.KeyUp += new System.Windows.Forms.KeyEventHandler(this.mtbTime_KeyUp);
             this.mtbTime.Validating += new System.ComponentModel.CancelEventHandler(this.mtbTime_Validating);
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.pictureBox32);
+            this.groupBox4.Controls.Add(this.pictureBox31);
+            this.groupBox4.Controls.Add(this.pictureBox28);
+            this.groupBox4.Controls.Add(this.label18);
+            this.groupBox4.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.groupBox4.Location = new System.Drawing.Point(3, 672);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(121, 46);
+            this.groupBox4.TabIndex = 18;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "패널 보기/감추기";
+            // 
+            // label18
+            // 
+            this.label18.Location = new System.Drawing.Point(4, 17);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(111, 24);
+            this.label18.TabIndex = 9;
+            this.label18.Text = "변경";
+            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pictureBox32
+            // 
+            this.pictureBox32.Image = global::MahlerNo2.Viewer.Properties.Resources.T;
+            this.pictureBox32.Location = new System.Drawing.Point(42, 17);
+            this.pictureBox32.Name = "pictureBox32";
+            this.pictureBox32.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox32.TabIndex = 14;
+            this.pictureBox32.TabStop = false;
+            // 
+            // pictureBox31
+            // 
+            this.pictureBox31.Image = global::MahlerNo2.Viewer.Properties.Resources.A;
+            this.pictureBox31.Location = new System.Drawing.Point(66, 17);
+            this.pictureBox31.Name = "pictureBox31";
+            this.pictureBox31.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox31.TabIndex = 13;
+            this.pictureBox31.TabStop = false;
+            // 
+            // pictureBox28
+            // 
+            this.pictureBox28.Image = global::MahlerNo2.Viewer.Properties.Resources.B;
+            this.pictureBox28.Location = new System.Drawing.Point(90, 17);
+            this.pictureBox28.Name = "pictureBox28";
+            this.pictureBox28.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox28.TabIndex = 12;
+            this.pictureBox28.TabStop = false;
             // 
             // pictureBox27
             // 
@@ -605,70 +659,45 @@
             this.pictureBox1.TabIndex = 54;
             this.pictureBox1.TabStop = false;
             // 
-            // groupBox4
+            // groupBox5
             // 
-            this.groupBox4.Controls.Add(this.pictureBox32);
-            this.groupBox4.Controls.Add(this.pictureBox31);
-            this.groupBox4.Controls.Add(this.pictureBox28);
-            this.groupBox4.Controls.Add(this.label18);
-            this.groupBox4.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.groupBox4.Location = new System.Drawing.Point(3, 590);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(121, 46);
-            this.groupBox4.TabIndex = 18;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "패널 보기/감추기";
+            this.groupBox5.Controls.Add(this.ptbOnline);
+            this.groupBox5.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.groupBox5.Location = new System.Drawing.Point(3, 3);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(121, 76);
+            this.groupBox5.TabIndex = 19;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "모드";
             // 
-            // pictureBox28
+            // ptbOnline
             // 
-            this.pictureBox28.Image = global::MahlerNo2.Viewer.Properties.Resources.B;
-            this.pictureBox28.Location = new System.Drawing.Point(90, 17);
-            this.pictureBox28.Name = "pictureBox28";
-            this.pictureBox28.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox28.TabIndex = 12;
-            this.pictureBox28.TabStop = false;
-            // 
-            // label18
-            // 
-            this.label18.Location = new System.Drawing.Point(4, 17);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(111, 24);
-            this.label18.TabIndex = 9;
-            this.label18.Text = "변경";
-            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // pictureBox31
-            // 
-            this.pictureBox31.Image = global::MahlerNo2.Viewer.Properties.Resources.A;
-            this.pictureBox31.Location = new System.Drawing.Point(66, 17);
-            this.pictureBox31.Name = "pictureBox31";
-            this.pictureBox31.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox31.TabIndex = 13;
-            this.pictureBox31.TabStop = false;
-            // 
-            // pictureBox32
-            // 
-            this.pictureBox32.Image = global::MahlerNo2.Viewer.Properties.Resources.T;
-            this.pictureBox32.Location = new System.Drawing.Point(42, 17);
-            this.pictureBox32.Name = "pictureBox32";
-            this.pictureBox32.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox32.TabIndex = 14;
-            this.pictureBox32.TabStop = false;
+            this.ptbOnline.Image = global::MahlerNo2.Viewer.Properties.Resources.On;
+            this.ptbOnline.Location = new System.Drawing.Point(37, 20);
+            this.ptbOnline.Name = "ptbOnline";
+            this.ptbOnline.Size = new System.Drawing.Size(48, 48);
+            this.ptbOnline.TabIndex = 58;
+            this.ptbOnline.TabStop = false;
             // 
             // RemoconControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "RemoconControl";
-            this.Size = new System.Drawing.Size(128, 637);
+            this.Size = new System.Drawing.Size(128, 725);
             this.groupBox3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox32)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox31)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
@@ -697,10 +726,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.groupBox4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox31)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox32)).EndInit();
+            this.groupBox5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ptbOnline)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -761,5 +788,7 @@
         private System.Windows.Forms.PictureBox pictureBox31;
         private System.Windows.Forms.PictureBox pictureBox28;
         private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.PictureBox ptbOnline;
     }
 }

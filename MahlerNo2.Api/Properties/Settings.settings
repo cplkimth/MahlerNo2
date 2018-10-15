@@ -11,8 +11,11 @@
     <Setting Name="Port" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">3512</Value>
     </Setting>
-    <Setting Name="CacheSecond" Type="System.Int32" Scope="User">
+    <Setting Name="CacheTimeForRequest" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">300</Value>
+    </Setting>
+    <Setting Name="CacheTimeForBackup" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">60</Value>
     </Setting>
   </Settings>
 </SettingsFile>

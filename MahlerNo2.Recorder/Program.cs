@@ -18,11 +18,11 @@ namespace MahlerNo2.Recorder
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            OnRunTime = true;
+            IsRunTime = true;
 
             Application.Run(new MainForm());
         }
 
-        public static bool OnRunTime { get; private set; }
+        public static bool IsRunTime { get; private set; }
     }
 }

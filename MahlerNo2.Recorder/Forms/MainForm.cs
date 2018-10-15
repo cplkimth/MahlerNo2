@@ -45,7 +45,7 @@ namespace MahlerNo2.Recorder.Forms
         {
             base.OnLoad(e);
 
-            if (DesignMode || Program.OnRunTime == false)
+            if (DesignMode || Program.IsRunTime == false)
                 return;
 
             Opacity = Settings.Default.Opacity / 100.0;
@@ -56,7 +56,7 @@ namespace MahlerNo2.Recorder.Forms
         {
             base.OnShown(e);
 
-            if (DesignMode || Program.OnRunTime == false)
+            if (DesignMode || Program.IsRunTime == false)
                 return;
 
 #if DEBUG
@@ -79,7 +79,7 @@ if (Screen.AllScreens.Length > 1)
 
         private void tmrShot_Tick(object sender, EventArgs e)
         {
-            var directory = Path.Combine(Settings.Default.ShotRoot, DateTime.Today.ToString(Utility.DateFormat));
+            var directory = Path.Combine(Settings.Default.ShotRoot, DateTime.Today.ToDateString());
             Directory.CreateDirectory(directory);
             var fileNameWithoutExtension = DateTime.Now.ToString(Utility.DateTimeFormat);
 

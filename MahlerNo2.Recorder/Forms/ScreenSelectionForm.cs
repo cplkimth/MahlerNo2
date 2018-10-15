@@ -16,7 +16,7 @@ namespace MahlerNo2.Recorder.Forms
         {
             base.OnLoad(e);
 
-            if (DesignMode || Program.OnRunTime == false)
+            if (DesignMode || Program.IsRunTime == false)
                 return;
 
             uscLeftScreen.LoadScreenImage(Screen.AllScreens[0]);

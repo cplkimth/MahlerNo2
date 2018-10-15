@@ -10,11 +10,5 @@ namespace MahlerNo2.Viewer.Components
         }
 
         public string Folder { get; set; }
-
-        public string From { get; set; }
-
-        public string To { get; set; }
-
-        public int FileCount { get; set; }
     }
 }

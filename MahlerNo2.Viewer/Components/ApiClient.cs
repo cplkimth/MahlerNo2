@@ -31,11 +31,14 @@ namespace MahlerNo2.Viewer.Components
 
         private readonly HttpClient _client;
 
-        private string BaseUrl => $"http://{Settings.Default.IP}:{Settings.Default.Port}/api/shot";
+        private readonly string _baseUrl = $"http://{Settings.Default.IP}:{Settings.Default.Port}/api";
+
+        private string Shot => _baseUrl + "/shot";
+        private string Backup => _baseUrl + "/backup";
 
         public List<string> GetDateList()
         {
-            string url = BaseUrl;
+            string url = Shot;
 
             var response = _client.GetAsync(url).Result;
 
@@ -44,25 +47,39 @@ namespace MahlerNo2.Viewer.Components
             var result = response.Content.ReadAsStringAsync().Result;
 
             return JsonConvert.DeserializeObject<List<string>>(result);
-
-            throw new NotImplementedException("ApiClient.GetDateList");
-
-//            byte[] mybytearray = null;
-//            _response = _client.GetAsync(string.Format("http://localhost:13925/api/values")).Result;
-//            if (_response.IsSuccessStatusCode)
-//            {
-//                string result=null;
-//                result = _response.Content.ReadAsStringAsync().Result.Replace("\"", string.Empty);
-//                mybytearray=Convert.FromBase64String(result);
-//
-//                var stream = new MemoryStream(mybytearray);
-//                pictureBox1.Image = Image.FromStream(stream);
-//            }
         }
 
         public byte[] GetShot(string date, string time)
         {
-            string url = $"{BaseUrl}/{date}/{time}";
+            string url = $"{Shot}/{date}/{time}";
+
+            var response = _client.GetAsync(url).Result;
+
+            if (response.IsSuccessStatusCode == false)
+                return null;
+
+            string result = response.Content.ReadAsStringAsync().Result.Replace("\"", string.Empty);
+            return Convert.FromBase64String(result);
+        }
+
+        public List<string> GetFileNamesInDate(string date)
+        {
+            // http://10.10.14.99:3512/api/backup/180717
+            string url = $"{Backup}/{date}";
+
+            var response = _client.GetAsync(url).Result;
+
+            if (response.IsSuccessStatusCode == false)
+                return null;
+            var result = response.Content.ReadAsStringAsync().Result;
+
+            return JsonConvert.DeserializeObject<List<string>>(result);
+        }
+        
+        public byte[] GetShotForBackup(string date, string time)
+        {
+            // http://10.10.14.99:3512/api/backup/180717/094624
+            string url = $"{Backup}/{date}/{time}";
 
             var response = _client.GetAsync(url).Result;
 

@@ -62,12 +62,24 @@ namespace MahlerNo2.Api.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("300")]
-        public int CacheSecond {
+        public int CacheTimeForRequest {
             get {
-                return ((int)(this["CacheSecond"]));
+                return ((int)(this["CacheTimeForRequest"]));
             }
             set {
-                this["CacheSecond"] = value;
+                this["CacheTimeForRequest"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("60")]
+        public int CacheTimeForBackup {
+            get {
+                return ((int)(this["CacheTimeForBackup"]));
+            }
+            set {
+                this["CacheTimeForBackup"] = value;
             }
         }
     }

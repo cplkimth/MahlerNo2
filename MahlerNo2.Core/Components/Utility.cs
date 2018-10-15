@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Reflection;
+using System.Text.RegularExpressions;
 
 namespace MahlerNo2.Core.Components
 {
@@ -12,6 +15,11 @@ namespace MahlerNo2.Core.Components
 
         public const string ImageFileExtension = ".png";
         public const string NoteFileExtension = ".txt";
+
+        public static string ToDateString(this DateTime dateTime) => dateTime.ToString(DateFormat);
+        
+        public static string ToTimeString(this DateTime dateTime) => dateTime.ToString(TimeFormat);
+
 
         public static string GetProductVersion()
         {
@@ -36,6 +44,30 @@ namespace MahlerNo2.Core.Components
             {
                 return false;
             }
+        }
+
+        public static List<string> GetShotFolderList(string rootPath)
+        {
+            DirectoryInfo root = new DirectoryInfo(rootPath);
+
+            var query = from x in root.GetDirectories()
+                where Regex.IsMatch(x.Name, "\\d{6}")
+                select x.Name;
+
+            return query.ToList();
+        }
+
+        public static string GetEarliestFileName(string rootPath, string date, string time)
+        {
+            DirectoryInfo directory = new DirectoryInfo(Path.Combine(rootPath, date));
+
+            string requestedFileName = $"{date}_{time}{Utility.ImageFileExtension}";
+
+            var query = from x in directory.GetFiles("*" + Utility.ImageFileExtension)
+                where x.Name.CompareTo(requestedFileName) <= 0
+                select x.Name;
+
+            return query.LastOrDefault();
         }
     }
 }

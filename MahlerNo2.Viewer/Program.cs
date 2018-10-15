@@ -10,22 +10,22 @@ namespace MahlerNo2.Viewer
 {
     internal static class Program
     {
-        /// <summary>
-        ///     The main entry point for the application.
-        /// </summary>
         [STAThread]
         private static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            OnRunTime = true;
+            IsRunTime = true;
 
-            Application.Run(new MainForm());
+//            Application.Run(new MainForm());
+            Application.Run(new BackupForm(new DateTime(2018,7,17)));
 //            Application.Run(new ShotForm2(new DateTime(2018,10,12)));
 //            Application.Run(new RemoconForm());
         }
 
-        public static bool OnRunTime { get; private set; }
+        public static bool IsRunTime { get; private set; }
+
+        internal static bool OfflineMode { get; set; }
     }
 }

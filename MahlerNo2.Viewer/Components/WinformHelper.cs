@@ -1,12 +1,12 @@
 ﻿#region using
-
+using System;
 using System.Windows.Forms;
 
 #endregion
 
 namespace MahlerNo2.Viewer.Components
 {
-    public static class FormExtension
+    public static class WinformHelper
     {
         public static void EnterFullScreenMode(this Form targetForm)
         {
@@ -19,6 +19,20 @@ namespace MahlerNo2.Viewer.Components
         {
             targetForm.FormBorderStyle = FormBorderStyle.Sizable;
             targetForm.WindowState = FormWindowState.Normal;
+        }
+
+        public static void Run(this Form form, Action action)
+        {
+            try
+            {
+                form.Cursor = Cursors.WaitCursor;
+
+                action();
+            }
+            finally
+            {
+                form.Cursor = Cursors.Arrow;                
+            }
         }
     }
 }

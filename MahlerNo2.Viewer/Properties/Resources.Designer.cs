@@ -83,6 +83,16 @@ namespace MahlerNo2.Viewer.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Backup {
+            get {
+                object obj = ResourceManager.GetObject("Backup", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Bar {
             get {
                 object obj = ResourceManager.GetObject("Bar", resourceCulture);
@@ -166,6 +176,26 @@ namespace MahlerNo2.Viewer.Properties {
         internal static System.Drawing.Bitmap Num9 {
             get {
                 object obj = ResourceManager.GetObject("Num9", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Off {
+            get {
+                object obj = ResourceManager.GetObject("Off", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap On {
+            get {
+                object obj = ResourceManager.GetObject("On", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

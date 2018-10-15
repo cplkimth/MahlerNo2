@@ -3,6 +3,7 @@ using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 using MahlerNo2.Core.Components;
 using MahlerNo2.Viewer.Components;
@@ -33,7 +34,10 @@ namespace MahlerNo2.Viewer.Forms
                 return;
 
             Opacity = Settings.Default.Opacity;
-            ptbShot.SizeMode = (PictureBoxSizeMode) Settings.Default.SizeMode;
+            ptbShot.SizeMode = (PictureBoxSizeMode)Settings.Default.SizeMode;
+
+            string dateDirectory = Path.Combine(Settings.Default.ShotRoot, _date.ToDateString());
+            Directory.CreateDirectory(dateDirectory);
         }
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
@@ -92,7 +96,7 @@ namespace MahlerNo2.Viewer.Forms
                 case Keys.OemMinus | Keys.Shift:
                     ChangeOpacity(false);
                     break;
-                    #endregion
+                #endregion
 
                 #region size mode
                 case Keys.D8:
@@ -121,12 +125,17 @@ namespace MahlerNo2.Viewer.Forms
 
             uscRemocon.ChangeTime(second);
 
-            string date = _date.ToString(Utility.DateFormat);
-            string time = uscRemocon.Time.ToString(Utility.TimeFormat);
+            string date = _date.ToDateString();
+            string time = uscRemocon.Time.ToTimeString();
 
             try
             {
-                var bytes = ApiClient.Instance.GetShot(date, time);
+                byte[] bytes = null;
+                if (Program.OfflineMode)
+                    bytes = GetOfflineShot(date, time);
+                else
+                    bytes = GetOnlineShot(date, time);
+
                 ptbShot.Image = Image.FromStream(new MemoryStream(bytes));
                 Text = uscRemocon.Time.ToString("HH:mm:ss");
             }
@@ -136,8 +145,32 @@ namespace MahlerNo2.Viewer.Forms
             }
             finally
             {
-                Cursor = Cursors.Arrow;    
+                Cursor = Cursors.Arrow;
             }
+        }
+
+        private byte[] GetOnlineShot(string date, string time)
+        {
+            var filePath = Path.Combine(Settings.Default.ShotRoot, date, $"{date}_{time}{Utility.ImageFileExtension}");
+
+            if (File.Exists(filePath))
+            {
+                return File.ReadAllBytes(filePath);
+            }
+            else
+            {
+                var bytes = ApiClient.Instance.GetShot(date, time);
+                File.WriteAllBytes(filePath, bytes);
+                return bytes;
+            }
+        }
+
+        private byte[] GetOfflineShot(string date, string time)
+        {
+            var fileName = Utility.GetEarliestFileName(Settings.Default.ShotRoot, date, time);
+            var filePath = Path.Combine(Settings.Default.ShotRoot, date, fileName);
+
+            return File.ReadAllBytes(filePath);
         }
 
         private void ChangeOpacity(bool increased)
@@ -154,7 +187,7 @@ namespace MahlerNo2.Viewer.Forms
         {
             ptbShot.SizeMode = sizeMode;
 
-            Settings.Default.SizeMode = (int) sizeMode;
+            Settings.Default.SizeMode = (int)sizeMode;
         }
     }
 }

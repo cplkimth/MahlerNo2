@@ -70,5 +70,17 @@ namespace MahlerNo2.Viewer.Properties {
                 this["SizeMode"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("D:\\MahlerNo2")]
+        public string ShotRoot {
+            get {
+                return ((string)(this["ShotRoot"]));
+            }
+            set {
+                this["ShotRoot"] = value;
+            }
+        }
     }
 }

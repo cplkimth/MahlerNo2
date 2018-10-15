@@ -27,7 +27,10 @@ namespace MahlerNo2.Viewer.Controls
             if (DesignMode)
                 return;
 
-            mtbTime.Text = DateTime.Now.ToString(Utility.TimeFormat);
+            if (Program.OfflineMode)
+                ptbOnline.Image = Resources.Off;
+
+            mtbTime.Text = DateTime.Now.ToTimeString();
         }
 
         public DateTime Time => DateTime.ParseExact(mtbTime.Text, Utility.TimeFormat, null);
@@ -35,7 +38,7 @@ namespace MahlerNo2.Viewer.Controls
         public void ChangeTime(int second)
         {
             DateTime time = Time.AddSeconds(second);
-            mtbTime.Text = time.ToString(Utility.TimeFormat);
+            mtbTime.Text = time.ToTimeString();
         }
 
         private void mtbTime_Validating(object sender, System.ComponentModel.CancelEventArgs e)

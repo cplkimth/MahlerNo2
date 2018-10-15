@@ -23,7 +23,7 @@ namespace MahlerNo2.Recorder.Forms
         {
             base.OnLoad(e);
 
-            if (DesignMode || Program.OnRunTime == false)
+            if (DesignMode || Program.IsRunTime == false)
                 return;
 
             nupShotInterval.Value = Settings.Default.ShotInterval;
