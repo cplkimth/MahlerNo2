@@ -38,7 +38,7 @@
 + .Net Framework 4.6.1 설치 혹은 그 이상의 버전을 설치한다.
     + https://www.microsoft.com/ko-kr/download/details.aspx?id=49981
 + 실행파일을 다운로드 받고 압축을 푼 후 실행한다.
-    + https://github.com/cplkimth/MahlerNo2/blob/master/Document/release/MahlerNo2.zip?raw=true
+    + https://github.com/cplkimth/MahlerNo2/blob/master/Document/deployment/MahlerNo2.zip?raw=true
 
 
 ### I. API Server
