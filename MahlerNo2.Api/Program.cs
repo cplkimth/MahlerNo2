@@ -56,7 +56,8 @@ namespace MahlerNo2.Api
         {
             while (true)
             {
-                Console.WriteLine("Mahler No.2의 스크린샷이 저장될 폴더를 입력하세요. (예 D:\\MahlerNo2_Shots)");
+                Console.WriteLine();
+                Console.WriteLine("Mahler No.2의 스크린샷이 저장될 폴더를 입력하세요. (기본값 D:\\MahlerNo2_Shots)");
 
                 string input = Console.ReadLine();
                 if (input.Length == 0)
@@ -77,6 +78,7 @@ namespace MahlerNo2.Api
         {
             while (true)
             {
+                Console.WriteLine();
                 Console.WriteLine("포트를 입력하세요. (1025 ~ 65535)");
 
                 string input = Console.ReadLine();
@@ -103,6 +105,7 @@ namespace MahlerNo2.Api
 
             while (true)
             {
+                Console.WriteLine();
                 Console.WriteLine($"IP를 선택하세요. (1 ~ {addresses.Count})");
 
                 string input = Console.ReadLine();

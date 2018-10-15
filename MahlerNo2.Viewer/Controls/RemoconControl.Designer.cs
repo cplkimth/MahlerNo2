@@ -388,9 +388,9 @@
             // 
             this.label17.Location = new System.Drawing.Point(4, 47);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(41, 24);
+            this.label17.Size = new System.Drawing.Size(62, 24);
             this.label17.TabIndex = 16;
-            this.label17.Text = "최대창";
+            this.label17.Text = "전체화면";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ptbOnline
