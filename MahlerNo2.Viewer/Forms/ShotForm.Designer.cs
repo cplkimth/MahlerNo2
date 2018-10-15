@@ -52,6 +52,7 @@
             this.uscRemocon.Name = "uscRemocon";
             this.uscRemocon.Size = new System.Drawing.Size(128, 812);
             this.uscRemocon.TabIndex = 4;
+            this.uscRemocon.BackupClicked += new System.EventHandler<MahlerNo2.Viewer.Controls.RemoconControl.BackupClickedEventArgs>(this.uscRemocon_BackupClicked);
             // 
             // panel1
             // 

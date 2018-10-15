@@ -53,7 +53,7 @@
   <ItemGroup>
     <Compile Include="Components\ApiClient.cs" />
     <Compile Include="Components\WinformHelper.cs" />
-    <Compile Include="Components\ShotFolder.cs" />
+    <Compile Include="Components\StringItem.cs" />
     <Compile Include="Controls\RemoconControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -192,6 +192,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Backup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Enter.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

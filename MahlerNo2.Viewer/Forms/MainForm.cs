@@ -52,7 +52,7 @@ namespace MahlerNo2.Viewer.Forms
             Settings.Default.Save();
 
             this.Run(
-                () => bdsShotFolder.DataSource = ApiClient.Instance.GetDateList().ConvertAll(x => new ShotFolder(x))
+                () => bdsShotFolder.DataSource = ApiClient.Instance.GetDateList().ConvertAll(x => new StringItem(x))
                 );
         }
 
@@ -69,7 +69,7 @@ namespace MahlerNo2.Viewer.Forms
             Program.OfflineMode = true;
             Settings.Default.ShotRoot = txtBrowse.Text;
 
-            bdsShotFolder.DataSource = Utility.GetShotFolderList(Settings.Default.ShotRoot).ConvertAll(x => new ShotFolder(x));
+            bdsShotFolder.DataSource = Utility.GetShotFolderList(Settings.Default.ShotRoot).ConvertAll(x => new StringItem(x));
         }
     }
 }

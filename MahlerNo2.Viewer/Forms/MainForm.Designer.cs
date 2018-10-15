@@ -92,15 +92,15 @@
             // folderDataGridViewTextBoxColumn
             // 
             this.folderDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.folderDataGridViewTextBoxColumn.DataPropertyName = "Folder";
+            this.folderDataGridViewTextBoxColumn.DataPropertyName = "Value";
             this.folderDataGridViewTextBoxColumn.FillWeight = 65.65144F;
-            this.folderDataGridViewTextBoxColumn.HeaderText = "Folder";
+            this.folderDataGridViewTextBoxColumn.HeaderText = "Value";
             this.folderDataGridViewTextBoxColumn.Name = "folderDataGridViewTextBoxColumn";
             this.folderDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // bdsShotFolder
             // 
-            this.bdsShotFolder.DataSource = typeof(MahlerNo2.Viewer.Components.ShotFolder);
+            this.bdsShotFolder.DataSource = typeof(MahlerNo2.Viewer.Components.StringItem);
             // 
             // txtPort
             // 

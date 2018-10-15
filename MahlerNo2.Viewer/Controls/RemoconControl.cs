@@ -28,7 +28,10 @@ namespace MahlerNo2.Viewer.Controls
                 return;
 
             if (Program.OfflineMode)
+            {
                 ptbOnline.Image = Resources.Off;
+                btnBackup.Visible = false;
+            }
 
             mtbTime.Text = DateTime.Now.ToTimeString();
         }
@@ -56,5 +59,50 @@ namespace MahlerNo2.Viewer.Controls
 //            if (e.KeyCode == Keys.Enter && Regex.IsMatch(mtbTime.Text, TimeRegex))
 //                    OnTimeChanged();
         }
+
+        private void btnBackup_Click(object sender, EventArgs e)
+        {
+            OnBackupClicked();
+        }
+
+        #region BackupClicked event things for C# 3.0
+        public event EventHandler<BackupClickedEventArgs> BackupClicked;
+
+        protected virtual void OnBackupClicked(BackupClickedEventArgs e)
+        {
+            if (BackupClicked != null)
+                BackupClicked(this, e);
+        }
+
+        private BackupClickedEventArgs OnBackupClicked()
+        {
+            BackupClickedEventArgs args = new BackupClickedEventArgs();
+            OnBackupClicked(args);
+
+            return args;
+        }
+
+/*private BackupClickedEventArgs OnBackupClickedForOut()
+{
+	BackupClickedEventArgs args = new BackupClickedEventArgs();
+    OnBackupClicked(args);
+
+    return args;
+}*/
+
+        public class BackupClickedEventArgs : EventArgs
+        {
+	
+
+            /*public BackupClickedEventArgs()
+            {
+            }
+            
+            public BackupClickedEventArgs()
+            {
+                
+            }*/
+        }
+        #endregion
     }
 }

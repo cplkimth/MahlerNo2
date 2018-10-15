@@ -1,13 +1,18 @@
 ﻿#region
 using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Threading;
 using System.Windows.Forms;
 using MahlerNo2.Core.Components;
 using MahlerNo2.Viewer.Components;
+using MahlerNo2.Viewer.Properties;
+
 #endregion
 
 namespace MahlerNo2.Viewer.Forms
 {
-    public partial class BackupForm : Form
+    public partial class BackupForm : ViewerBaseForm
     {
         private BackupForm()
         {
@@ -17,17 +22,18 @@ namespace MahlerNo2.Viewer.Forms
         public BackupForm(DateTime date) : this()
         {
             _date = date;
+            _directory = Path.Combine(Settings.Default.ShotRoot, DateText);
         }
 
         private readonly DateTime _date;
 
-        protected override void OnLoad(EventArgs e)
-        {
-            base.OnLoad(e);
+        private readonly string _directory;
 
-            if (DesignMode || Program.IsRunTime == false)
-                return;
-        }
+        private string _dateText;
+
+        private List<string> _times;
+
+        public string DateText => _dateText ?? (_dateText = _date.ToDateString());
 
         protected override void OnShown(EventArgs e)
         {
@@ -36,30 +42,56 @@ namespace MahlerNo2.Viewer.Forms
             if (DesignMode || Program.IsRunTime == false)
                 return;
 
-            bdsBackup.DataSource = ApiClient.Instance.GetFileNamesInDate(_date.ToDateString()).ConvertAll(x => new BackupItem(x));
+            Directory.CreateDirectory(_directory);
+
+            _times = ApiClient.Instance.GetFileNamesInDate(DateText);
+
+            txtFolder.Text = _directory;
+            prbProgress.Maximum = _times.Count;
+            lblCount.Text = $"{_times.Count:N0} 건을 다운로드합니다.";
         }
 
-        private void dgvList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void btnBackup_Click(object sender, EventArgs e)
         {
-            var text = (string) dgvList[e.ColumnIndex, e.RowIndex].Value;
+            btnBackup.Enabled = false;
 
-            if (text == null)
-                return;
-
-            var bytes = ApiClient.Instance.GetShotForBackup(_date.ToDateString(), text);
-            MessageBox.Show(bytes.Length.ToString());
+            bgwDownloader.RunWorkerAsync(_times);
         }
-    }
 
-    public class BackupItem
-    {
-        public BackupItem(string fileName)
+        private void bgwDownloader_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
         {
-            FileName = fileName;
+            List<string> times = (List<string>) e.Argument;
+
+            int count = 0;
+
+            foreach (var time in times)
+            {
+                count++;
+
+                string filePath = Path.Combine(_directory, $"{DateText}_{time}{Utility.ImageFileExtension}");
+
+                if (File.Exists(filePath) == false)
+                {
+                    var bytes = ApiClient.Instance.GetShotForBackup(_date.ToDateString(), time);
+                    File.WriteAllBytes(filePath, bytes);
+                }
+                    
+                bgwDownloader.ReportProgress(count, filePath);
+            }
         }
 
-        public string FileName { get; set; }
+        private void bgwDownloader_ProgressChanged(object sender, System.ComponentModel.ProgressChangedEventArgs e)
+        {
+            prbProgress.Value = e.ProgressPercentage;
 
-        public bool Downloaded { get; set; }
+            lblStatus.Text = (string) e.UserState;
+        }
+
+        private void bgwDownloader_RunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
+        {
+            btnBackup.Enabled = true;
+            MessageBox.Show($"다운로드가 끝났습니다.\n다운로드한 파일은 아래 위치에 저장되어 있습니다.\n\n{_directory}");
+            Close();
+        }
     }
 }

@@ -28,125 +28,131 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.dgvList = new System.Windows.Forms.DataGridView();
-            this.fileNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.downloadedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.bdsBackup = new System.Windows.Forms.BindingSource(this.components);
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.btnBackup = new System.Windows.Forms.ToolStripButton();
-            this.prbProgress = new System.Windows.Forms.ToolStripProgressBar();
-            this.lblProgress = new System.Windows.Forms.ToolStripLabel();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsBackup)).BeginInit();
-            this.toolStrip1.SuspendLayout();
+            this.bgwDownloader = new System.ComponentModel.BackgroundWorker();
+            this.prbProgress = new System.Windows.Forms.ProgressBar();
+            this.btnBackup = new System.Windows.Forms.Button();
+            this.lblCount = new System.Windows.Forms.Label();
+            this.txtFolder = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dgvList
+            // bgwDownloader
             // 
-            this.dgvList.AllowUserToAddRows = false;
-            this.dgvList.AllowUserToDeleteRows = false;
-            this.dgvList.AutoGenerateColumns = false;
-            this.dgvList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvList.ColumnHeadersVisible = false;
-            this.dgvList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.fileNameDataGridViewTextBoxColumn,
-            this.downloadedDataGridViewCheckBoxColumn});
-            this.dgvList.DataSource = this.bdsBackup;
-            this.dgvList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvList.Location = new System.Drawing.Point(0, 31);
-            this.dgvList.Name = "dgvList";
-            this.dgvList.ReadOnly = true;
-            this.dgvList.RowHeadersVisible = false;
-            this.dgvList.RowTemplate.Height = 23;
-            this.dgvList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvList.Size = new System.Drawing.Size(800, 419);
-            this.dgvList.TabIndex = 2;
-            this.dgvList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvList_CellDoubleClick);
-            // 
-            // fileNameDataGridViewTextBoxColumn
-            // 
-            this.fileNameDataGridViewTextBoxColumn.DataPropertyName = "FileName";
-            this.fileNameDataGridViewTextBoxColumn.HeaderText = "FileName";
-            this.fileNameDataGridViewTextBoxColumn.Name = "fileNameDataGridViewTextBoxColumn";
-            this.fileNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // downloadedDataGridViewCheckBoxColumn
-            // 
-            this.downloadedDataGridViewCheckBoxColumn.DataPropertyName = "Downloaded";
-            this.downloadedDataGridViewCheckBoxColumn.HeaderText = "Downloaded";
-            this.downloadedDataGridViewCheckBoxColumn.Name = "downloadedDataGridViewCheckBoxColumn";
-            this.downloadedDataGridViewCheckBoxColumn.ReadOnly = true;
-            // 
-            // bdsBackup
-            // 
-            this.bdsBackup.DataSource = typeof(MahlerNo2.Viewer.Forms.BackupItem);
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnBackup,
-            this.lblProgress,
-            this.prbProgress});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(800, 31);
-            this.toolStrip1.Stretch = true;
-            this.toolStrip1.TabIndex = 3;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // btnBackup
-            // 
-            this.btnBackup.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnBackup.Image = global::MahlerNo2.Viewer.Properties.Resources.Backup;
-            this.btnBackup.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnBackup.Name = "btnBackup";
-            this.btnBackup.Size = new System.Drawing.Size(28, 28);
-            this.btnBackup.Text = "toolStripButton1";
+            this.bgwDownloader.WorkerReportsProgress = true;
+            this.bgwDownloader.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwDownloader_DoWork);
+            this.bgwDownloader.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.bgwDownloader_ProgressChanged);
+            this.bgwDownloader.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwDownloader_RunWorkerCompleted);
             // 
             // prbProgress
             // 
-            this.prbProgress.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.prbProgress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.prbProgress.Location = new System.Drawing.Point(91, 66);
             this.prbProgress.Name = "prbProgress";
-            this.prbProgress.Size = new System.Drawing.Size(100, 28);
-            this.prbProgress.Step = 1;
-            this.prbProgress.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.prbProgress.Size = new System.Drawing.Size(256, 23);
+            this.prbProgress.TabIndex = 4;
             // 
-            // lblProgress
+            // btnBackup
             // 
-            this.lblProgress.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.lblProgress.Name = "lblProgress";
-            this.lblProgress.Size = new System.Drawing.Size(89, 28);
-            this.lblProgress.Text = "1,234 / 12,345";
+            this.btnBackup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBackup.Image = global::MahlerNo2.Viewer.Properties.Resources.Backup;
+            this.btnBackup.Location = new System.Drawing.Point(299, 95);
+            this.btnBackup.Name = "btnBackup";
+            this.btnBackup.Size = new System.Drawing.Size(48, 48);
+            this.btnBackup.TabIndex = 5;
+            this.btnBackup.UseVisualStyleBackColor = true;
+            this.btnBackup.Click += new System.EventHandler(this.btnBackup_Click);
+            // 
+            // lblCount
+            // 
+            this.lblCount.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblCount.Location = new System.Drawing.Point(12, 10);
+            this.lblCount.Name = "lblCount";
+            this.lblCount.Size = new System.Drawing.Size(335, 23);
+            this.lblCount.TabIndex = 7;
+            this.lblCount.Text = "12,345 건을 다운로드합니다.";
+            this.lblCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtFolder
+            // 
+            this.txtFolder.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtFolder.Location = new System.Drawing.Point(91, 39);
+            this.txtFolder.Name = "txtFolder";
+            this.txtFolder.ReadOnly = true;
+            this.txtFolder.Size = new System.Drawing.Size(256, 21);
+            this.txtFolder.TabIndex = 8;
+            this.txtFolder.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.Location = new System.Drawing.Point(12, 37);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(73, 23);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "저장 폴더 : ";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label4
+            // 
+            this.label4.Location = new System.Drawing.Point(12, 66);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(73, 23);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "진 행 률 : ";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lblStatus});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 152);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(359, 22);
+            this.statusStrip1.TabIndex = 11;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(0, 17);
             // 
             // BackupForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dgvList);
-            this.Controls.Add(this.toolStrip1);
+            this.ClientSize = new System.Drawing.Size(359, 174);
+            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtFolder);
+            this.Controls.Add(this.lblCount);
+            this.Controls.Add(this.btnBackup);
+            this.Controls.Add(this.prbProgress);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "BackupForm";
             this.Text = "백업";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsBackup)).EndInit();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dgvList;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton btnBackup;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fileNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn downloadedDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.BindingSource bdsBackup;
-        private System.Windows.Forms.ToolStripLabel lblProgress;
-        private System.Windows.Forms.ToolStripProgressBar prbProgress;
+        private System.ComponentModel.BackgroundWorker bgwDownloader;
+        private System.Windows.Forms.ProgressBar prbProgress;
+        private System.Windows.Forms.Button btnBackup;
+        private System.Windows.Forms.Label lblCount;
+        private System.Windows.Forms.TextBox txtFolder;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel lblStatus;
     }
 }

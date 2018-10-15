@@ -26,6 +26,8 @@ namespace MahlerNo2.Viewer.Forms
 
         private readonly DateTime _date;
 
+        private bool _borderless;
+
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
@@ -45,7 +47,13 @@ namespace MahlerNo2.Viewer.Forms
             switch (keyData)
             {
                 case Keys.Tab:
-                    ToggleRemoveVisible();
+                    ToggleRemoconVisible();
+                    break;
+                case Keys.Enter:
+                    ToggleWindowSize();
+                    break;
+                case Keys.Escape:
+                    Close();
                     break;
 
                 #region move
@@ -111,7 +119,15 @@ namespace MahlerNo2.Viewer.Forms
             return base.ProcessCmdKey(ref msg, keyData);
         }
 
-        private void ToggleRemoveVisible()
+        private void ToggleWindowSize()
+        {
+            if (FormBorderStyle == FormBorderStyle.None)
+                FormBorderStyle = FormBorderStyle.Sizable;
+            else
+                FormBorderStyle = FormBorderStyle.None;
+        }
+
+        private void ToggleRemoconVisible()
         {
             if (uscRemocon.Width == 0)
                 uscRemocon.Width = 128;
@@ -188,6 +204,12 @@ namespace MahlerNo2.Viewer.Forms
             ptbShot.SizeMode = sizeMode;
 
             Settings.Default.SizeMode = (int)sizeMode;
+        }
+
+        private void uscRemocon_BackupClicked(object sender, Controls.RemoconControl.BackupClickedEventArgs e)
+        {
+            BackupForm form = new BackupForm(_date);
+            form.ShowDialog();
         }
     }
 }
