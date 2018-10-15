@@ -59,6 +59,8 @@ namespace MahlerNo2.Api
                 Console.WriteLine("Mahler No.2의 스크린샷이 저장될 폴더를 입력하세요. (예 D:\\MahlerNo2_Shots)");
 
                 string input = Console.ReadLine();
+                if (input.Length == 0)
+                    input = "D:\\MahlerNo2_Shots";
 
                 if (Directory.Exists(input) == false)
                     continue;

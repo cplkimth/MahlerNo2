@@ -19,7 +19,7 @@ namespace MahlerNo2.Viewer.Forms
             _date = date;
         }
 
-        private DateTime _date;
+        private readonly DateTime _date;
 
         protected override void OnLoad(EventArgs e)
         {
