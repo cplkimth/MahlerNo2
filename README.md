@@ -34,10 +34,11 @@
 강사컴에서 수강생컴으로 이미지를 전송하는 API를 제공하는 웹 서버  
 
 ## 사용방법은?
-### [.Net Framework 4.6.1 설치]
-닷넷 프레임워크 4.6.1 혹은 그 이상의 버전이 필요.
-
+### 실행 준비
++ .Net Framework 4.6.1 설치 혹은 그 이상의 버전을 설치한다.
 https://www.microsoft.com/ko-kr/download/details.aspx?id=49981
++ 실행파일을 다운로드 받고 압축을 푼 후 실행한다.
+
 
 
 ### I. API Server
@@ -94,7 +95,7 @@ MahlerNo2.Viewer.exe
 ![저장폴더](https://github.com/cplkimth/MahlerNo2/blob/master/Document/pics/On.png?raw=true)
 
 ##### 오프라인 모드 표시
-![저장폴더](https://github.com/cplkimth/MahlerNo2/blob/master/Document/pics/Offline.png?raw=true)
+![저장폴더](https://github.com/cplkimth/MahlerNo2/blob/master/Document/pics/Off.png?raw=true)
 
 ##### 백업
 ![저장폴더](https://github.com/cplkimth/MahlerNo2/blob/master/Document/pics/Backup.png?raw=true)
@@ -103,7 +104,8 @@ MahlerNo2.Viewer.exe
 
 ##### 이동
 ![저장폴더](https://github.com/cplkimth/MahlerNo2/blob/master/Document/pics/%EC%9D%B4%EB%8F%99.png?raw=true)
-스크린샷이 찍힌 현재 시각과 스크린샷을 이동하는 단축키
++ 스크린샷이 찍힌 강사컴의 시각 표시
++ 스크린샷을 이동하는 단축키 
 + 좌/우 화살표는 초 단위 이동
 + 상/하 화살표는 분 단위 이동
 + Control 키와 함께 누르면 5 단위만큼 이동
