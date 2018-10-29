@@ -49,6 +49,10 @@ MahlerNo2.Api.exe
 #### 2. 수강생 컴과 통신할 IP 주소와 포트, 스크린샷 저장 폴더를 지정한다.
 ![저장폴더](https://github.com/cplkimth/MahlerNo2/blob/master/Document/pics/API.png?raw=true)
 
+#### 3. 관리자 권한으로 아래 명령을 수행한다.
+netsh http add urlacl http://{IP}:{포트번호}/ user=EVERYONE
+ex) netsh http add urlacl http://10.10.14.75:3512/ user=EVERYONE
+
 ### II. Recorder
 #### 1. 강사컴에서 Recorder를 실행한다.
 ```

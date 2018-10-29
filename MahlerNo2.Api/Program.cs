@@ -13,6 +13,9 @@ namespace MahlerNo2.Api
 {
     class Program
     {
+        protected internal const int MinPort = 80;
+        protected internal const int MaxPort = 65535;
+
         static void Main(string[] args)
         {
             while (true)
@@ -35,6 +38,7 @@ namespace MahlerNo2.Api
             }
 
             Console.WriteLine("Mahler No.2 API server is running. press any key to stop.");
+
             using (WebApp.Start<Startup>($"http://{Settings.Default.IP}:{Settings.Default.Port}/"))
             {
                 Console.ReadLine();
@@ -79,13 +83,13 @@ namespace MahlerNo2.Api
             while (true)
             {
                 Console.WriteLine();
-                Console.WriteLine("포트를 입력하세요. (1025 ~ 65535)");
+                Console.WriteLine($"포트를 입력하세요. ({MinPort} ~ {MaxPort})");
 
                 string input = Console.ReadLine();
 
                 bool parsed = int.TryParse(input, out int port);
 
-                if (parsed == false || port < 1025 || port > 65535)
+                if (parsed == false || port < MinPort || port > MaxPort)
                     continue;
 
                 Settings.Default.Port = port;
