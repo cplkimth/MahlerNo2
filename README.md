@@ -35,7 +35,7 @@
 
 ## 사용방법은?
 ### 실행 준비
-+ .Net Framework 4.6.1 설치 혹은 그 이상의 버전을 설치한다.
++ .Net Framework 4.6.1 혹은 그 이상의 버전을 설치한다.
     + https://www.microsoft.com/ko-kr/download/details.aspx?id=49981
 + 실행파일을 다운로드 받고 압축을 푼 후 실행한다.
     + https://github.com/cplkimth/MahlerNo2/blob/master/Document/deployment/MahlerNo2.zip?raw=true
@@ -50,8 +50,8 @@ MahlerNo2.Api.exe
 ![저장폴더](https://github.com/cplkimth/MahlerNo2/blob/master/Document/pics/API.png?raw=true)
 
 #### 3. 관리자 권한으로 아래 명령을 수행한다.
-netsh http add urlacl http://{IP}:{포트번호}/ user=EVERYONE
-ex) netsh http add urlacl http://10.10.14.75:3512/ user=EVERYONE
++ netsh http add urlacl http://{IP}:{포트번호}/ user=EVERYONE
++ ex) netsh http add urlacl http://10.10.14.75:3512/ user=EVERYONE
 
 ### II. Recorder
 #### 1. 강사컴에서 Recorder를 실행한다.
