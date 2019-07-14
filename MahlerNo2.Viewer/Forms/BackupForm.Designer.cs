@@ -37,6 +37,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
+            this.btnBrowse = new System.Windows.Forms.Button();
+            this.fbdDownload = new System.Windows.Forms.FolderBrowserDialog();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,16 +53,16 @@
             // 
             this.prbProgress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.prbProgress.Location = new System.Drawing.Point(91, 66);
+            this.prbProgress.Location = new System.Drawing.Point(91, 95);
             this.prbProgress.Name = "prbProgress";
-            this.prbProgress.Size = new System.Drawing.Size(256, 23);
+            this.prbProgress.Size = new System.Drawing.Size(407, 23);
             this.prbProgress.TabIndex = 4;
             // 
             // btnBackup
             // 
             this.btnBackup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnBackup.Image = global::MahlerNo2.Viewer.Properties.Resources.Backup;
-            this.btnBackup.Location = new System.Drawing.Point(299, 95);
+            this.btnBackup.Location = new System.Drawing.Point(504, 95);
             this.btnBackup.Name = "btnBackup";
             this.btnBackup.Size = new System.Drawing.Size(48, 48);
             this.btnBackup.TabIndex = 5;
@@ -73,7 +75,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCount.Location = new System.Drawing.Point(12, 10);
             this.lblCount.Name = "lblCount";
-            this.lblCount.Size = new System.Drawing.Size(335, 23);
+            this.lblCount.Size = new System.Drawing.Size(540, 23);
             this.lblCount.TabIndex = 7;
             this.lblCount.Text = "12,345 건을 다운로드합니다.";
             this.lblCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -85,7 +87,7 @@
             this.txtFolder.Location = new System.Drawing.Point(91, 39);
             this.txtFolder.Name = "txtFolder";
             this.txtFolder.ReadOnly = true;
-            this.txtFolder.Size = new System.Drawing.Size(256, 21);
+            this.txtFolder.Size = new System.Drawing.Size(407, 21);
             this.txtFolder.TabIndex = 8;
             this.txtFolder.TabStop = false;
             // 
@@ -100,7 +102,7 @@
             // 
             // label4
             // 
-            this.label4.Location = new System.Drawing.Point(12, 66);
+            this.label4.Location = new System.Drawing.Point(12, 95);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(73, 23);
             this.label4.TabIndex = 10;
@@ -113,7 +115,7 @@
             this.lblStatus});
             this.statusStrip1.Location = new System.Drawing.Point(0, 152);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(359, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(564, 22);
             this.statusStrip1.TabIndex = 11;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -122,11 +124,23 @@
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(0, 17);
             // 
+            // btnBrowse
+            // 
+            this.btnBrowse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBrowse.Image = global::MahlerNo2.Viewer.Properties.Resources.Browse;
+            this.btnBrowse.Location = new System.Drawing.Point(504, 36);
+            this.btnBrowse.Name = "btnBrowse";
+            this.btnBrowse.Size = new System.Drawing.Size(48, 48);
+            this.btnBrowse.TabIndex = 12;
+            this.btnBrowse.UseVisualStyleBackColor = true;
+            this.btnBrowse.Click += new System.EventHandler(this.BtnBrowse_Click);
+            // 
             // BackupForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(359, 174);
+            this.ClientSize = new System.Drawing.Size(564, 174);
+            this.Controls.Add(this.btnBrowse);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -154,5 +168,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel lblStatus;
+        private System.Windows.Forms.Button btnBrowse;
+        private System.Windows.Forms.FolderBrowserDialog fbdDownload;
     }
 }

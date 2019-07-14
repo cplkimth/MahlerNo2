@@ -5,14 +5,17 @@
     <Setting Name="ShotInterval" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">3</Value>
     </Setting>
-    <Setting Name="ShotRoot" Type="System.String" Scope="User">
-      <Value Profile="(Default)">D:\sync\pc\MahlerNo2_Shots</Value>
-    </Setting>
     <Setting Name="Opacity" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">50</Value>
     </Setting>
     <Setting Name="MaxPreviousShots" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">5</Value>
+    </Setting>
+    <Setting Name="BreakTimeAlarm" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="Address" Type="System.String" Scope="User">
+      <Value Profile="(Default)">cn76.ipdisk.co.kr, 3423</Value>
     </Setting>
   </Settings>
 </SettingsFile>

@@ -12,7 +12,7 @@ namespace MahlerNo2.Viewer.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.8.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.1.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -37,25 +37,13 @@ namespace MahlerNo2.Viewer.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("175.198.24.39")]
-        public string IP {
+        [global::System.Configuration.DefaultSettingValueAttribute("cn76.ipdisk.co.kr, 3423")]
+        public string Address {
             get {
-                return ((string)(this["IP"]));
+                return ((string)(this["Address"]));
             }
             set {
-                this["IP"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("3512")]
-        public int Port {
-            get {
-                return ((int)(this["Port"]));
-            }
-            set {
-                this["Port"] = value;
+                this["Address"] = value;
             }
         }
         
@@ -68,18 +56,6 @@ namespace MahlerNo2.Viewer.Properties {
             }
             set {
                 this["SizeMode"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("D:\\MahlerNo2")]
-        public string ShotRoot {
-            get {
-                return ((string)(this["ShotRoot"]));
-            }
-            set {
-                this["ShotRoot"] = value;
             }
         }
     }

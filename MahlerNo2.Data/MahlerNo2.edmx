@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MahlerNo2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BreakTime">
+          <Key>
+            <PropertyRef Name="No" />
+          </Key>
+          <Property Name="At" Type="datetime" Nullable="false" />
+          <Property Name="No" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Emoticon">
+          <Key>
+            <PropertyRef Name="EmoticonId" />
+          </Key>
+          <Property Name="EmoticonId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmoticonCode" Type="int" Nullable="false" />
+          <Property Name="At" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Shot">
+          <Key>
+            <PropertyRef Name="At" />
+          </Key>
+          <Property Name="At" Type="datetime" Nullable="false" />
+          <Property Name="Data" Type="varbinary(max)" Nullable="false" />
+          <Property Name="Note" Type="nvarchar" MaxLength="1000" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Speech">
+          <Key>
+            <PropertyRef Name="SpeechId" />
+          </Key>
+          <Property Name="SpeechId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Text" Type="nvarchar" MaxLength="1000" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="MahlerNo2ModelStoreContainer">
+          <EntitySet Name="BreakTime" EntityType="Self.BreakTime" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Emoticon" EntityType="Self.Emoticon" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Shot" EntityType="Self.Shot" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Speech" EntityType="Self.Speech" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MahlerNo2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="MahlerNo2Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BreakTimes" EntityType="MahlerNo2Model.BreakTime" />
+          <EntitySet Name="Emoticons" EntityType="MahlerNo2Model.Emoticon" />
+          <EntitySet Name="Shots" EntityType="MahlerNo2Model.Shot" />
+          <EntitySet Name="Speeches" EntityType="MahlerNo2Model.Speech" />
+        </EntityContainer>
+        <EntityType Name="BreakTime">
+          <Key>
+            <PropertyRef Name="No" />
+          </Key>
+          <Property Name="At" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="No" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Emoticon">
+          <Key>
+            <PropertyRef Name="EmoticonId" />
+          </Key>
+          <Property Name="EmoticonId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmoticonCode" Type="Int32" Nullable="false" />
+          <Property Name="At" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Shot">
+          <Key>
+            <PropertyRef Name="At" />
+          </Key>
+          <Property Name="At" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Data" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="Note" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Speech">
+          <Key>
+            <PropertyRef Name="SpeechId" />
+          </Key>
+          <Property Name="SpeechId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Text" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MahlerNo2ModelStoreContainer" CdmEntityContainer="MahlerNo2Entities">
+          <EntitySetMapping Name="BreakTimes">
+            <EntityTypeMapping TypeName="MahlerNo2Model.BreakTime">
+              <MappingFragment StoreEntitySet="BreakTime">
+                <ScalarProperty Name="No" ColumnName="No" />
+                <ScalarProperty Name="At" ColumnName="At" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Emoticons">
+            <EntityTypeMapping TypeName="MahlerNo2Model.Emoticon">
+              <MappingFragment StoreEntitySet="Emoticon">
+                <ScalarProperty Name="At" ColumnName="At" />
+                <ScalarProperty Name="EmoticonCode" ColumnName="EmoticonCode" />
+                <ScalarProperty Name="EmoticonId" ColumnName="EmoticonId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Shots">
+            <EntityTypeMapping TypeName="MahlerNo2Model.Shot">
+              <MappingFragment StoreEntitySet="Shot">
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="Data" ColumnName="Data" />
+                <ScalarProperty Name="At" ColumnName="At" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Speeches">
+            <EntityTypeMapping TypeName="MahlerNo2Model.Speech">
+              <MappingFragment StoreEntitySet="Speech">
+                <ScalarProperty Name="Text" ColumnName="Text" />
+                <ScalarProperty Name="SpeechId" ColumnName="SpeechId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

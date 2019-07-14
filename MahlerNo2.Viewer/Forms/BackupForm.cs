@@ -5,6 +5,8 @@ using System.IO;
 using System.Threading;
 using System.Windows.Forms;
 using MahlerNo2.Core.Components;
+using MahlerNo2.Data;
+using MahlerNo2.Data.Components;
 using MahlerNo2.Viewer.Components;
 using MahlerNo2.Viewer.Properties;
 
@@ -22,16 +24,13 @@ namespace MahlerNo2.Viewer.Forms
         public BackupForm(DateTime date) : this()
         {
             _date = date;
-            _directory = Path.Combine(Settings.Default.ShotRoot, DateText);
         }
 
         private readonly DateTime _date;
 
-        private readonly string _directory;
-
         private string _dateText;
 
-        private List<string> _times;
+        private List<DateTime> _times;
 
         public string DateText => _dateText ?? (_dateText = _date.ToDateString());
 
@@ -42,11 +41,10 @@ namespace MahlerNo2.Viewer.Forms
             if (DesignMode || Program.IsRunTime == false)
                 return;
 
-            Directory.CreateDirectory(_directory);
+            _times = DataRepository.Shot.LoadForDate(DateText);
 
-            _times = ApiClient.Instance.GetFileNamesInDate(DateText);
-
-            txtFolder.Text = _directory;
+            txtFolder.Text = OfflineShotManager.Instance.GetDirectoryForDate(DateText);
+            fbdDownload.SelectedPath = txtFolder.Text;
             prbProgress.Maximum = _times.Count;
             lblCount.Text = $"{_times.Count:N0} 건을 다운로드합니다.";
         }
@@ -60,7 +58,7 @@ namespace MahlerNo2.Viewer.Forms
 
         private void bgwDownloader_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
         {
-            List<string> times = (List<string>) e.Argument;
+            List<DateTime> times = (List<DateTime>)e.Argument;
 
             int count = 0;
 
@@ -68,15 +66,13 @@ namespace MahlerNo2.Viewer.Forms
             {
                 count++;
 
-                string filePath = Path.Combine(_directory, $"{DateText}_{time}{Utility.ImageFileExtension}");
+                string timeText = time.ToTimeString();
 
-                if (File.Exists(filePath) == false)
-                {
-                    var bytes = ApiClient.Instance.GetShotForBackup(_date.ToDateString(), time);
-                    File.WriteAllBytes(filePath, bytes);
-                }
-                    
-                bgwDownloader.ReportProgress(count, filePath);
+                var image = DataRepository.Shot.SelectFirst(x => x.At == time, x => x.Data);
+
+                OfflineShotManager.Instance.Save(DateText, timeText, image);
+
+                bgwDownloader.ReportProgress(count, timeText);
             }
         }
 
@@ -84,14 +80,22 @@ namespace MahlerNo2.Viewer.Forms
         {
             prbProgress.Value = e.ProgressPercentage;
 
-            lblStatus.Text = (string) e.UserState;
+            string timeText = (string) e.UserState;
+            timeText = timeText.Insert(4, ":").Insert(2, ":");
+            lblStatus.Text = timeText;
         }
 
         private void bgwDownloader_RunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
         {
             btnBackup.Enabled = true;
-            MessageBox.Show($"다운로드가 끝났습니다.\n다운로드한 파일은 아래 위치에 저장되어 있습니다.\n\n{_directory}");
+            MessageBox.Show($"다운로드가 끝났습니다.");
             Close();
+        }
+
+        private void BtnBrowse_Click(object sender, EventArgs e)
+        {
+            if (fbdDownload.ShowDialog() == DialogResult.OK)
+                txtFolder.Text = fbdDownload.SelectedPath;
         }
     }
 }

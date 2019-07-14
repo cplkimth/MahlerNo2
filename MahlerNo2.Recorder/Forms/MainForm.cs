@@ -1,12 +1,13 @@
-﻿// 1 2 3 456
-// 1 111 1 1
-// 123
-using System;
+﻿using System;
+using System.Drawing;
 using System.IO;
+using System.Threading;
 using System.Windows.Forms;
 using MahlerNo2.Core.Components;
+using MahlerNo2.Data;
 using MahlerNo2.Recorder.Components;
 using MahlerNo2.Recorder.Properties;
+using Tulpep.NotificationWindow;
 
 namespace MahlerNo2.Recorder.Forms
 {
@@ -50,6 +51,8 @@ namespace MahlerNo2.Recorder.Forms
 
             Opacity = Settings.Default.Opacity / 100.0;
             Text = PlayFormText;
+
+            DbContextFactory.ChangeIpAddress(Settings.Default.Address);
         }
 
         protected override void OnShown(EventArgs e)
@@ -60,7 +63,7 @@ namespace MahlerNo2.Recorder.Forms
                 return;
 
 #if DEBUG
-            TopMost = true;
+
 #else
 TopMost = true;
 if (Screen.AllScreens.Length > 1)
@@ -79,23 +82,19 @@ if (Screen.AllScreens.Length > 1)
 
         private void tmrShot_Tick(object sender, EventArgs e)
         {
-            var directory = Path.Combine(Settings.Default.ShotRoot, DateTime.Today.ToDateString());
-            Directory.CreateDirectory(directory);
-            var fileNameWithoutExtension = DateTime.Now.ToString(Utility.DateTimeFormat);
-
-            var bytes = ScreenShotTaker.Instance.ShotSelectedScreen();
+            var bytes = ScreenShotTaker.Instance.Shot(Settings.Default.MaxPreviousShots);
 
             if (bytes == null)
                 return;
 
-            var filePath = Path.Combine(directory, fileNameWithoutExtension + Utility.ImageFileExtension);
-            File.WriteAllBytes(filePath, bytes);
-
-            if (txtNote.Text == string.Empty) 
-                return;
-
-            filePath = Path.Combine(directory, fileNameWithoutExtension + Utility.NoteFileExtension);
-            File.WriteAllText(filePath, txtNote.Text);
+            try
+            {
+                DataRepository.Shot.Save(bytes, txtNote.Text);
+            }
+            catch (Exception ex)
+            {
+                Text = $"{DateTime.Now.ToShortTimeString()} : {ex.Message}";
+            }
 
             txtNote.Text = string.Empty;
         }
@@ -117,6 +116,12 @@ if (Screen.AllScreens.Length > 1)
                 StopTakingShot();
             else
                 StartTakingShot();
+        }
+
+        private void Popup_Click(object sender, EventArgs e)
+        {
+            tsbPlay.PerformClick();
+            WindowState = FormWindowState.Minimized;
         }
 
         private void StopTakingShot()
@@ -143,6 +148,30 @@ if (Screen.AllScreens.Length > 1)
         private void txtNote_Leave(object sender, EventArgs e)
         {
             StartTakingShot();
+        }
+
+        private void tmrBreakTime_Tick(object sender, EventArgs e)
+        {
+            //var breakTime = BreakTimeManager.Instance.GetBreakTimeText();
+
+            //if (breakTime == null)
+            //    return;
+
+            //await TtsHelper.SpeakAsync(breakTime);
+        }
+
+        private void TmrNotification_Tick(object sender, EventArgs e)
+        {
+            if (tmrShot.Enabled)
+                return;
+
+            PopupNotifier popup = new PopupNotifier();
+            popup.ImageSize = new System.Drawing.Size(200,131);
+            popup.Image = Resources.Popup;
+            popup.Click += Popup_Click;
+            popup.ContentText = "Play!";
+            popup.ContentFont = new System.Drawing.Font(Font.FontFamily, 30);
+            popup.Popup();
         }
     }
 }

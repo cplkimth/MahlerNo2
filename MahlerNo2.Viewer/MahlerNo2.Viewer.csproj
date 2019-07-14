@@ -8,9 +8,10 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>MahlerNo2.Viewer</RootNamespace>
     <AssemblyName>MahlerNo2.Viewer</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -34,11 +35,19 @@
   <PropertyGroup>
     <ApplicationIcon>Resources\Mahler.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup />
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -51,7 +60,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Components\ApiClient.cs" />
     <Compile Include="Components\WinformHelper.cs" />
     <Compile Include="Components\StringItem.cs" />
     <Compile Include="Controls\RemoconControl.cs">
@@ -108,6 +116,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="app.manifest" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\MahlerNo2.Viewer.Components.ShotFolder.datasource" />
     <None Include="Properties\DataSources\MahlerNo2.Viewer.Forms.BackupItem.datasource" />
@@ -137,6 +146,10 @@
     <ProjectReference Include="..\MahlerNo2.Core\MahlerNo2.Core.csproj">
       <Project>{893A0600-9AC7-4EC4-AB91-1607269672C6}</Project>
       <Name>MahlerNo2.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MahlerNo2.Data\MahlerNo2.Data.csproj">
+      <Project>{CC568B46-1BB5-4DE4-B979-AD8A1BADB15F}</Project>
+      <Name>MahlerNo2.Data</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -195,6 +208,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Enter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\어려워요.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\재밌어요.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\졸려요.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Browse.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
