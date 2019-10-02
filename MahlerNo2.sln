@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27703.2035
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29102.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MahlerNo2.Viewer", "MahlerNo2.Viewer\MahlerNo2.Viewer.csproj", "{C3850A22-E996-4DC2-A4C7-C141B84CD0DA}"
 EndProject
@@ -13,12 +13,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MahlerNo2.ConsoleTest", "Ma
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{83F92B2F-8A97-41DE-8707-99774AA62096}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MahlerNo2.Api", "MahlerNo2.Api\MahlerNo2.Api.csproj", "{0E72C85F-41DB-4B56-88DF-6CBB5BF2C021}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{8E4D80D2-2044-41AD-92A9-7F456A2BA3AB}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MahlerNo2.Data", "MahlerNo2.Data\MahlerNo2.Data.csproj", "{CC568B46-1BB5-4DE4-B979-AD8A1BADB15F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MahlerNo2.UnitTest", "MahlerNo2.UnitTest\MahlerNo2.UnitTest.csproj", "{8B567AC7-2A0E-41E8-966A-D03B744E4AF8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,16 +44,21 @@ Global
 		{1AC50C83-2A23-455B-90B4-1E131C452E74}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1AC50C83-2A23-455B-90B4-1E131C452E74}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1AC50C83-2A23-455B-90B4-1E131C452E74}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0E72C85F-41DB-4B56-88DF-6CBB5BF2C021}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0E72C85F-41DB-4B56-88DF-6CBB5BF2C021}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0E72C85F-41DB-4B56-88DF-6CBB5BF2C021}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0E72C85F-41DB-4B56-88DF-6CBB5BF2C021}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC568B46-1BB5-4DE4-B979-AD8A1BADB15F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC568B46-1BB5-4DE4-B979-AD8A1BADB15F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC568B46-1BB5-4DE4-B979-AD8A1BADB15F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC568B46-1BB5-4DE4-B979-AD8A1BADB15F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B567AC7-2A0E-41E8-966A-D03B744E4AF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B567AC7-2A0E-41E8-966A-D03B744E4AF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B567AC7-2A0E-41E8-966A-D03B744E4AF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B567AC7-2A0E-41E8-966A-D03B744E4AF8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{1AC50C83-2A23-455B-90B4-1E131C452E74} = {83F92B2F-8A97-41DE-8707-99774AA62096}
+		{8B567AC7-2A0E-41E8-966A-D03B744E4AF8} = {83F92B2F-8A97-41DE-8707-99774AA62096}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BED66E5F-60A0-4633-8EC4-3C614D8E6DF7}

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using MahlerNo2.Core.Forms;
+using MahlerNo2.Data;
 using MahlerNo2.Recorder.Properties;
 
 namespace MahlerNo2.Recorder.Forms
@@ -28,17 +29,19 @@ namespace MahlerNo2.Recorder.Forms
 
             nupShotInterval.Value = Settings.Default.ShotInterval;
             nupMaxPreviousShot.Value = Settings.Default.MaxPreviousShots;
-            txtShotPath.Text = Settings.Default.ShotRoot;
             trbOpacity.Value = Settings.Default.Opacity;
+            txtAddress.Text = Settings.Default.Address;
         }
 
         private void btnOK_Click(object sender, EventArgs e)
         {
             Settings.Default.ShotInterval = Convert.ToInt32(nupShotInterval.Value);
             Settings.Default.MaxPreviousShots = Convert.ToInt32(nupMaxPreviousShot.Value);
-            Settings.Default.ShotRoot = txtShotPath.Text.Trim();
             Settings.Default.Opacity = trbOpacity.Value;
+            Settings.Default.Address = txtAddress.Text;
             Settings.Default.Save();
+
+            DbContextFactory.ChangeIpAddress(Settings.Default.Address);
 
             DialogResult = DialogResult.OK;
 

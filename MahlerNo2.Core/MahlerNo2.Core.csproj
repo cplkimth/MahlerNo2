@@ -11,6 +11,7 @@
     <AssemblyName>MahlerNo2.Core</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -43,8 +44,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Components\KeyboardHook.cs" />
+    <Compile Include="Components\ScreenShotTaker.cs" />
     <Compile Include="Components\Shot.cs" />
-    <Compile Include="Components\Utility.cs" />
     <Compile Include="Controls\BaseUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>

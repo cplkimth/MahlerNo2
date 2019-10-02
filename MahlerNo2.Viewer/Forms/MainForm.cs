@@ -3,6 +3,8 @@
 using System;
 using System.Windows.Forms;
 using MahlerNo2.Core.Components;
+using MahlerNo2.Data;
+using MahlerNo2.Data.Components;
 using MahlerNo2.Viewer.Components;
 using MahlerNo2.Viewer.Properties;
 
@@ -25,9 +27,7 @@ namespace MahlerNo2.Viewer.Forms
                 return;
 
             lblVersion.Text += Utility.GetProductVersion();
-            txtIP.Text = Settings.Default.IP;
-            txtPort.Text = Settings.Default.Port.ToString();
-            txtBrowse.Text = Settings.Default.ShotRoot;
+            txtAddress.Text = Settings.Default.Address;
         }
 
         private void dgvList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -47,29 +47,19 @@ namespace MahlerNo2.Viewer.Forms
 
         private void btnConnectOnline_Click(object sender, EventArgs e)
         {
-            Settings.Default.IP = txtIP.Text;
-            Settings.Default.Port = int.Parse(txtPort.Text);
+            Settings.Default.Address = txtAddress.Text;
             Settings.Default.Save();
 
-            this.Run(
-                () => bdsShotFolder.DataSource = ApiClient.Instance.GetDateList().ConvertAll(x => new StringItem(x))
-                );
-        }
+            DbContextFactory.ChangeIpAddress(Settings.Default.Address);
 
-        private void btnBrowse_Click(object sender, EventArgs e)
-        {
-            if (fbdBrowse.ShowDialog() != DialogResult.OK)
-                return;
-
-            txtBrowse.Text = fbdBrowse.SelectedPath;
+            bdsShotFolder.DataSource = DataRepository.Shot.GetDateList().ConvertAll(x => new StringItem(x));
         }
 
         private void btnConnectOffline_Click(object sender, EventArgs e)
         {
             Program.OfflineMode = true;
-            Settings.Default.ShotRoot = txtBrowse.Text;
 
-            bdsShotFolder.DataSource = Utility.GetShotFolderList(Settings.Default.ShotRoot).ConvertAll(x => new StringItem(x));
+            bdsShotFolder.DataSource = OfflineShotManager.Instance.GetDateList().ConvertAll(x => new StringItem(x));
         }
     }
 }

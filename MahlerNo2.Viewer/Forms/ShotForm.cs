@@ -6,6 +6,8 @@ using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using MahlerNo2.Core.Components;
+using MahlerNo2.Data;
+using MahlerNo2.Data.Components;
 using MahlerNo2.Viewer.Components;
 using MahlerNo2.Viewer.Properties;
 #endregion
@@ -26,8 +28,6 @@ namespace MahlerNo2.Viewer.Forms
 
         private readonly DateTime _date;
 
-        private bool _borderless;
-
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
@@ -37,11 +37,23 @@ namespace MahlerNo2.Viewer.Forms
 
             Opacity = Settings.Default.Opacity;
             ptbShot.SizeMode = (PictureBoxSizeMode)Settings.Default.SizeMode;
-
-            string dateDirectory = Path.Combine(Settings.Default.ShotRoot, _date.ToDateString());
-            Directory.CreateDirectory(dateDirectory);
         }
 
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            var dateDirectory = LocalShotManager.Instance.GetDirectoryForDate(_date.ToDateString());
+
+            try
+            {
+                Directory.Delete(dateDirectory, true);
+            }
+            catch
+            {
+                MessageBox.Show($"아래 임시 디렉토리를 삭제하지 못하였습니다. 수동으로 지워주세요.\r\n\r\n{dateDirectory}");
+            }
+
+            base.OnClosing(e);
+        }
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             switch (keyData)
@@ -135,7 +147,7 @@ namespace MahlerNo2.Viewer.Forms
                 uscRemocon.Width = 0;
         }
 
-        public void LoadShot(int second)
+        private void LoadShot(int second)
         {
             Cursor = Cursors.WaitCursor;
 
@@ -148,12 +160,12 @@ namespace MahlerNo2.Viewer.Forms
             {
                 byte[] bytes = null;
                 if (Program.OfflineMode)
-                    bytes = GetOfflineShot(date, time);
+                    bytes = OfflineShotManager.Instance.Load(date, time);
                 else
-                    bytes = GetOnlineShot(date, time);
+                    bytes = DataRepository.Shot.Load(date, time);
 
                 ptbShot.Image = Image.FromStream(new MemoryStream(bytes));
-                Text = uscRemocon.Time.ToString("HH:mm:ss");
+                Text = uscRemocon.Time.Date.ToLongDateString();
             }
             catch
             {
@@ -163,30 +175,6 @@ namespace MahlerNo2.Viewer.Forms
             {
                 Cursor = Cursors.Arrow;
             }
-        }
-
-        private byte[] GetOnlineShot(string date, string time)
-        {
-            var filePath = Path.Combine(Settings.Default.ShotRoot, date, $"{date}_{time}{Utility.ImageFileExtension}");
-
-            if (File.Exists(filePath))
-            {
-                return File.ReadAllBytes(filePath);
-            }
-            else
-            {
-                var bytes = ApiClient.Instance.GetShot(date, time);
-                File.WriteAllBytes(filePath, bytes);
-                return bytes;
-            }
-        }
-
-        private byte[] GetOfflineShot(string date, string time)
-        {
-            var fileName = Utility.GetEarliestFileName(Settings.Default.ShotRoot, date, time);
-            var filePath = Path.Combine(Settings.Default.ShotRoot, date, fileName);
-
-            return File.ReadAllBytes(filePath);
         }
 
         private void ChangeOpacity(bool increased)

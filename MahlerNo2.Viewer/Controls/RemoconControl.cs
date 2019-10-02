@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using MahlerNo2.Core.Components;
+using MahlerNo2.Data.Components;
 using MahlerNo2.Viewer.Properties;
 #endregion
 

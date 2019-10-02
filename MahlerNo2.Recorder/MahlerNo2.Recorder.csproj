@@ -11,6 +11,7 @@
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -34,8 +35,18 @@
   <PropertyGroup>
     <ApplicationIcon>Mahler.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -46,14 +57,30 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="Tulpep.NotificationWindow, Version=1.1.25.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Tulpep.NotificationWindow.1.1.25\lib\net40\Tulpep.NotificationWindow.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Components\ScreenShotTaker.cs" />
+    <Compile Include="Components\BreakTimeManager.cs" />
+    <Compile Include="Components\TtsHelper.cs" />
+    <Compile Include="Controls\EmoticonListControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\EmoticonListControl.Designer.cs">
+      <DependentUpon>EmoticonListControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\ScreenSelectionControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Controls\ScreenSelectionControl.Designer.cs">
       <DependentUpon>ScreenSelectionControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SpeechListControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\SpeechListControl.Designer.cs">
+      <DependentUpon>SpeechListControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
@@ -81,8 +108,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Controls\EmoticonListControl.resx">
+      <DependentUpon>EmoticonListControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\ScreenSelectionControl.resx">
       <DependentUpon>ScreenSelectionControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SpeechListControl.resx">
+      <DependentUpon>SpeechListControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -103,6 +136,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="app.manifest" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\MahlerNo2.Data.Speech.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -130,12 +166,31 @@
       <Project>{893A0600-9AC7-4EC4-AB91-1607269672C6}</Project>
       <Name>MahlerNo2.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MahlerNo2.Data\MahlerNo2.Data.csproj">
+      <Project>{CC568B46-1BB5-4DE4-B979-AD8A1BADB15F}</Project>
+      <Name>MahlerNo2.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Note.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Mahler.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\어려워요.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\재밌어요.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\졸려요.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Popup.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Camera.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

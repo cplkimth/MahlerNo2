@@ -5,17 +5,11 @@
     <Setting Name="Opacity" Type="System.Double" Scope="User">
       <Value Profile="(Default)">1</Value>
     </Setting>
-    <Setting Name="IP" Type="System.String" Scope="User">
-      <Value Profile="(Default)">175.198.24.39</Value>
-    </Setting>
-    <Setting Name="Port" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">3512</Value>
+    <Setting Name="Address" Type="System.String" Scope="User">
+      <Value Profile="(Default)">cn76.ipdisk.co.kr, 3423</Value>
     </Setting>
     <Setting Name="SizeMode" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">4</Value>
-    </Setting>
-    <Setting Name="ShotRoot" Type="System.String" Scope="User">
-      <Value Profile="(Default)">D:\MahlerNo2</Value>
     </Setting>
   </Settings>
 </SettingsFile>

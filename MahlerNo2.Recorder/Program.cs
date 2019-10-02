@@ -20,7 +20,13 @@ namespace MahlerNo2.Recorder
 
             IsRunTime = true;
 
+            AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
+
             Application.Run(new MainForm());
+        }
+
+        private static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
+        {
         }
 
         public static bool IsRunTime { get; private set; }
