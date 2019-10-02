@@ -15,7 +15,7 @@ namespace MahlerNo2.Data
     public partial class Emoticon
     {
         public int EmoticonId { get; set; }
-        public int EmoticonCode { get; set; }
+        public string Name { get; set; }
         public System.DateTime At { get; set; }
     }
 }

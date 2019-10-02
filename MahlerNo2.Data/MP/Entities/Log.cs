@@ -4,7 +4,7 @@ using System;
 
 namespace MahlerNo2.Data
 {
-    public partial class Shot
+    public partial class Log
     {
             
     }

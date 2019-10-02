@@ -25,9 +25,8 @@ namespace MahlerNo2.Data
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<BreakTime> BreakTimes { get; set; }
-        public virtual DbSet<Emoticon> Emoticons { get; set; }
+        public virtual DbSet<Log> Logs { get; set; }
         public virtual DbSet<Shot> Shots { get; set; }
-        public virtual DbSet<Speech> Speeches { get; set; }
+        public virtual DbSet<Emoticon> Emoticons { get; set; }
     }
 }

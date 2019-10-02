@@ -30,50 +30,24 @@
         {
             this.components = new System.ComponentModel.Container();
             this.tmrShot = new System.Windows.Forms.Timer(this.components);
-            this.btnDummy = new System.Windows.Forms.Button();
-            this.txtNote = new System.Windows.Forms.TextBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsbPlay = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbOption = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsiCamera = new System.Windows.Forms.ToolStripButton();
             this.tbcPage = new System.Windows.Forms.TabControl();
             this.tbpSpeech = new System.Windows.Forms.TabPage();
-            this.uscSpeech = new MahlerNo2.Recorder.Controls.SpeechListControl();
-            this.tbpNote = new System.Windows.Forms.TabPage();
-            this.tmrBreakTime = new System.Windows.Forms.Timer(this.components);
             this.tmrNotification = new System.Windows.Forms.Timer(this.components);
-            this.tsiCamera = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStrip1.SuspendLayout();
             this.tbcPage.SuspendLayout();
-            this.tbpSpeech.SuspendLayout();
-            this.tbpNote.SuspendLayout();
             this.SuspendLayout();
             // 
             // tmrShot
             // 
             this.tmrShot.Interval = 1000;
             this.tmrShot.Tick += new System.EventHandler(this.tmrShot_Tick);
-            // 
-            // btnDummy
-            // 
-            this.btnDummy.Location = new System.Drawing.Point(134, 110);
-            this.btnDummy.Name = "btnDummy";
-            this.btnDummy.Size = new System.Drawing.Size(0, 0);
-            this.btnDummy.TabIndex = 6;
-            this.btnDummy.UseVisualStyleBackColor = true;
-            // 
-            // txtNote
-            // 
-            this.txtNote.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtNote.Location = new System.Drawing.Point(3, 3);
-            this.txtNote.Multiline = true;
-            this.txtNote.Name = "txtNote";
-            this.txtNote.Size = new System.Drawing.Size(630, 281);
-            this.txtNote.TabIndex = 5;
-            this.txtNote.Enter += new System.EventHandler(this.txtNote_Enter);
-            this.txtNote.Leave += new System.EventHandler(this.txtNote_Leave);
             // 
             // toolStrip1
             // 
@@ -87,7 +61,7 @@
             this.tsiCamera});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(644, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(736, 27);
             this.toolStrip1.TabIndex = 4;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -97,7 +71,7 @@
             this.tsbPlay.Image = global::MahlerNo2.Recorder.Properties.Resources.Play;
             this.tsbPlay.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbPlay.Name = "tsbPlay";
-            this.tsbPlay.Size = new System.Drawing.Size(24, 24);
+            this.tsbPlay.Size = new System.Drawing.Size(29, 24);
             this.tsbPlay.Text = "toolStripButton1";
             this.tsbPlay.ToolTipText = "Toggle Play/Pause";
             this.tsbPlay.Click += new System.EventHandler(this.tsbPlay_Click);
@@ -113,7 +87,7 @@
             this.tsbOption.Image = global::MahlerNo2.Recorder.Properties.Resources.Option;
             this.tsbOption.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbOption.Name = "tsbOption";
-            this.tsbOption.Size = new System.Drawing.Size(24, 24);
+            this.tsbOption.Size = new System.Drawing.Size(29, 24);
             this.tsbOption.Text = "Option";
             this.tsbOption.ToolTipText = "Option";
             this.tsbOption.Click += new System.EventHandler(this.tsbOption_Click);
@@ -122,62 +96,13 @@
             // 
             this.toolStripLabel1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(318, 24);
+            this.toolStripLabel1.Size = new System.Drawing.Size(406, 24);
             this.toolStripLabel1.Text = "Initial Catalog=MahlerNo2;User ID=mahler;Password=no2";
             // 
-            // tbcPage
+            // toolStripSeparator2
             // 
-            this.tbcPage.Controls.Add(this.tbpSpeech);
-            this.tbcPage.Controls.Add(this.tbpNote);
-            this.tbcPage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbcPage.Location = new System.Drawing.Point(0, 27);
-            this.tbcPage.Name = "tbcPage";
-            this.tbcPage.SelectedIndex = 0;
-            this.tbcPage.Size = new System.Drawing.Size(644, 307);
-            this.tbcPage.TabIndex = 7;
-            // 
-            // tbpSpeech
-            // 
-            this.tbpSpeech.Controls.Add(this.uscSpeech);
-            this.tbpSpeech.Location = new System.Drawing.Point(4, 22);
-            this.tbpSpeech.Name = "tbpSpeech";
-            this.tbpSpeech.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tbpSpeech.Size = new System.Drawing.Size(636, 281);
-            this.tbpSpeech.TabIndex = 1;
-            this.tbpSpeech.Text = "Speech";
-            this.tbpSpeech.UseVisualStyleBackColor = true;
-            // 
-            // uscSpeech
-            // 
-            this.uscSpeech.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uscSpeech.Location = new System.Drawing.Point(3, 3);
-            this.uscSpeech.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.uscSpeech.Name = "uscSpeech";
-            this.uscSpeech.Size = new System.Drawing.Size(630, 275);
-            this.uscSpeech.TabIndex = 0;
-            // 
-            // tbpNote
-            // 
-            this.tbpNote.Controls.Add(this.btnDummy);
-            this.tbpNote.Controls.Add(this.txtNote);
-            this.tbpNote.Location = new System.Drawing.Point(4, 22);
-            this.tbpNote.Name = "tbpNote";
-            this.tbpNote.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tbpNote.Size = new System.Drawing.Size(636, 287);
-            this.tbpNote.TabIndex = 0;
-            this.tbpNote.Text = "Note";
-            this.tbpNote.UseVisualStyleBackColor = true;
-            // 
-            // tmrBreakTime
-            // 
-            this.tmrBreakTime.Interval = 60000;
-            this.tmrBreakTime.Tick += new System.EventHandler(this.tmrBreakTime_Tick);
-            // 
-            // tmrNotification
-            // 
-            this.tmrNotification.Enabled = true;
-            this.tmrNotification.Interval = 60000;
-            this.tmrNotification.Tick += new System.EventHandler(this.TmrNotification_Tick);
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 27);
             // 
             // tsiCamera
             // 
@@ -186,31 +111,52 @@
             this.tsiCamera.Image = global::MahlerNo2.Recorder.Properties.Resources.Camera;
             this.tsiCamera.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsiCamera.Name = "tsiCamera";
-            this.tsiCamera.Size = new System.Drawing.Size(24, 24);
+            this.tsiCamera.Size = new System.Drawing.Size(29, 24);
             this.tsiCamera.Text = "toolStripButton1";
             // 
-            // toolStripSeparator2
+            // tbcPage
             // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 27);
+            this.tbcPage.Controls.Add(this.tbpSpeech);
+            this.tbcPage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbcPage.Location = new System.Drawing.Point(0, 27);
+            this.tbcPage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbcPage.Name = "tbcPage";
+            this.tbcPage.SelectedIndex = 0;
+            this.tbcPage.Size = new System.Drawing.Size(736, 391);
+            this.tbcPage.TabIndex = 7;
+            // 
+            // tbpSpeech
+            // 
+            this.tbpSpeech.Location = new System.Drawing.Point(4, 25);
+            this.tbpSpeech.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbpSpeech.Name = "tbpSpeech";
+            this.tbpSpeech.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbpSpeech.Size = new System.Drawing.Size(728, 362);
+            this.tbpSpeech.TabIndex = 1;
+            this.tbpSpeech.Text = "Speech";
+            this.tbpSpeech.UseVisualStyleBackColor = true;
+            // 
+            // tmrNotification
+            // 
+            this.tmrNotification.Enabled = true;
+            this.tmrNotification.Interval = 60000;
+            this.tmrNotification.Tick += new System.EventHandler(this.tmrNotification_Tick);
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(644, 334);
+            this.ClientSize = new System.Drawing.Size(736, 418);
             this.Controls.Add(this.tbcPage);
             this.Controls.Add(this.toolStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "Mahler No. 2 Recorder";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.tbcPage.ResumeLayout(false);
-            this.tbpSpeech.ResumeLayout(false);
-            this.tbpNote.ResumeLayout(false);
-            this.tbpNote.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,13 +168,8 @@
         private System.Windows.Forms.ToolStripButton tsbOption;
         private System.Windows.Forms.ToolStripButton tsbPlay;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.TextBox txtNote;
-        private System.Windows.Forms.Button btnDummy;
         private System.Windows.Forms.TabControl tbcPage;
-        private System.Windows.Forms.TabPage tbpNote;
         private System.Windows.Forms.TabPage tbpSpeech;
-        private Controls.SpeechListControl uscSpeech;
-        private System.Windows.Forms.Timer tmrBreakTime;
         private System.Windows.Forms.Timer tmrNotification;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;

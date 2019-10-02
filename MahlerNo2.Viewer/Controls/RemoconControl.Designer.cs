@@ -45,35 +45,19 @@
             this.pictureBox21 = new System.Windows.Forms.PictureBox();
             this.pictureBox15 = new System.Windows.Forms.PictureBox();
             this.pictureBox14 = new System.Windows.Forms.PictureBox();
-            this.pictureBox13 = new System.Windows.Forms.PictureBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.pictureBox25 = new System.Windows.Forms.PictureBox();
-            this.pictureBox26 = new System.Windows.Forms.PictureBox();
             this.label11 = new System.Windows.Forms.Label();
             this.pictureBox30 = new System.Windows.Forms.PictureBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.pictureBox19 = new System.Windows.Forms.PictureBox();
-            this.pictureBox20 = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
             this.pictureBox24 = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox18 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox17 = new System.Windows.Forms.PictureBox();
-            this.pictureBox16 = new System.Windows.Forms.PictureBox();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.mtbTime = new System.Windows.Forms.MaskedTextBox();
@@ -87,6 +71,13 @@
             this.label18 = new System.Windows.Forms.Label();
             this.ptbOnline = new System.Windows.Forms.PictureBox();
             this.btnBackup = new System.Windows.Forms.Button();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.usc졸려요 = new MahlerNo2.Viewer.Controls.EmoticonControl();
+            this.usc재밌어요 = new MahlerNo2.Viewer.Controls.EmoticonControl();
+            this.usc어려워요 = new MahlerNo2.Viewer.Controls.EmoticonControl();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -99,24 +90,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox30)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox29)).BeginInit();
@@ -124,19 +103,28 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox31)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbOnline)).BeginInit();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox3
             // 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.Controls.Add(this.label16);
             this.groupBox3.Controls.Add(this.pictureBox27);
             this.groupBox3.Controls.Add(this.label15);
             this.groupBox3.Controls.Add(this.pictureBox7);
-            this.groupBox3.Location = new System.Drawing.Point(3, 692);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox3.Location = new System.Drawing.Point(6, 492);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(0);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox3.Size = new System.Drawing.Size(138, 95);
+            this.groupBox3.Size = new System.Drawing.Size(135, 95);
             this.groupBox3.TabIndex = 17;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "이미지 비율";
@@ -181,15 +169,17 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.pictureBox8);
             this.groupBox2.Controls.Add(this.pictureBox4);
-            this.groupBox2.Location = new System.Drawing.Point(3, 584);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox2.Location = new System.Drawing.Point(6, 383);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(0);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox2.Size = new System.Drawing.Size(138, 101);
+            this.groupBox2.Size = new System.Drawing.Size(135, 101);
             this.groupBox2.TabIndex = 16;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "투명";
@@ -198,7 +188,7 @@
             // 
             this.label14.Location = new System.Drawing.Point(5, 59);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(47, 30);
+            this.label14.Size = new System.Drawing.Size(92, 30);
             this.label14.TabIndex = 8;
             this.label14.Text = "투명";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -207,7 +197,7 @@
             // 
             this.label13.Location = new System.Drawing.Point(5, 21);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(47, 30);
+            this.label13.Size = new System.Drawing.Size(92, 30);
             this.label13.TabIndex = 6;
             this.label13.Text = "불투명";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -234,48 +224,34 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.pictureBox23);
             this.groupBox1.Controls.Add(this.pictureBox22);
             this.groupBox1.Controls.Add(this.pictureBox21);
             this.groupBox1.Controls.Add(this.pictureBox15);
             this.groupBox1.Controls.Add(this.pictureBox14);
-            this.groupBox1.Controls.Add(this.pictureBox13);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.pictureBox25);
-            this.groupBox1.Controls.Add(this.pictureBox26);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.pictureBox30);
             this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.pictureBox19);
-            this.groupBox1.Controls.Add(this.pictureBox20);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.pictureBox24);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.pictureBox11);
-            this.groupBox1.Controls.Add(this.pictureBox12);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.pictureBox18);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.pictureBox17);
-            this.groupBox1.Controls.Add(this.pictureBox16);
-            this.groupBox1.Controls.Add(this.pictureBox10);
             this.groupBox1.Controls.Add(this.pictureBox9);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.pictureBox6);
             this.groupBox1.Controls.Add(this.pictureBox5);
             this.groupBox1.Controls.Add(this.pictureBox3);
-            this.groupBox1.Controls.Add(this.pictureBox2);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.mtbTime);
-            this.groupBox1.Location = new System.Drawing.Point(3, 61);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox1.Location = new System.Drawing.Point(6, 7);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(0);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Size = new System.Drawing.Size(138, 515);
+            this.groupBox1.Size = new System.Drawing.Size(135, 368);
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "이동";
@@ -283,7 +259,7 @@
             // pictureBox23
             // 
             this.pictureBox23.Image = global::MahlerNo2.Viewer.Properties.Resources.Down;
-            this.pictureBox23.Location = new System.Drawing.Point(103, 405);
+            this.pictureBox23.Location = new System.Drawing.Point(103, 295);
             this.pictureBox23.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox23.Name = "pictureBox23";
             this.pictureBox23.Size = new System.Drawing.Size(27, 30);
@@ -293,7 +269,7 @@
             // pictureBox22
             // 
             this.pictureBox22.Image = global::MahlerNo2.Viewer.Properties.Resources.Down;
-            this.pictureBox22.Location = new System.Drawing.Point(103, 442);
+            this.pictureBox22.Location = new System.Drawing.Point(103, 332);
             this.pictureBox22.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox22.Name = "pictureBox22";
             this.pictureBox22.Size = new System.Drawing.Size(27, 30);
@@ -303,7 +279,7 @@
             // pictureBox21
             // 
             this.pictureBox21.Image = global::MahlerNo2.Viewer.Properties.Resources.Up;
-            this.pictureBox21.Location = new System.Drawing.Point(103, 292);
+            this.pictureBox21.Location = new System.Drawing.Point(103, 219);
             this.pictureBox21.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox21.Name = "pictureBox21";
             this.pictureBox21.Size = new System.Drawing.Size(27, 30);
@@ -313,7 +289,7 @@
             // pictureBox15
             // 
             this.pictureBox15.Image = global::MahlerNo2.Viewer.Properties.Resources.Up;
-            this.pictureBox15.Location = new System.Drawing.Point(103, 330);
+            this.pictureBox15.Location = new System.Drawing.Point(103, 257);
             this.pictureBox15.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox15.Name = "pictureBox15";
             this.pictureBox15.Size = new System.Drawing.Size(27, 30);
@@ -323,55 +299,16 @@
             // pictureBox14
             // 
             this.pictureBox14.Image = global::MahlerNo2.Viewer.Properties.Resources.Left;
-            this.pictureBox14.Location = new System.Drawing.Point(103, 218);
+            this.pictureBox14.Location = new System.Drawing.Point(103, 181);
             this.pictureBox14.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox14.Name = "pictureBox14";
             this.pictureBox14.Size = new System.Drawing.Size(27, 30);
             this.pictureBox14.TabIndex = 84;
             this.pictureBox14.TabStop = false;
             // 
-            // pictureBox13
-            // 
-            this.pictureBox13.Image = global::MahlerNo2.Viewer.Properties.Resources.Left;
-            this.pictureBox13.Location = new System.Drawing.Point(103, 255);
-            this.pictureBox13.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(27, 30);
-            this.pictureBox13.TabIndex = 83;
-            this.pictureBox13.TabStop = false;
-            // 
-            // label10
-            // 
-            this.label10.Location = new System.Drawing.Point(5, 480);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(41, 30);
-            this.label10.TabIndex = 82;
-            this.label10.Text = "-10분";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // pictureBox25
-            // 
-            this.pictureBox25.Image = global::MahlerNo2.Viewer.Properties.Resources.Shift;
-            this.pictureBox25.Location = new System.Drawing.Point(75, 480);
-            this.pictureBox25.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pictureBox25.Name = "pictureBox25";
-            this.pictureBox25.Size = new System.Drawing.Size(27, 30);
-            this.pictureBox25.TabIndex = 81;
-            this.pictureBox25.TabStop = false;
-            // 
-            // pictureBox26
-            // 
-            this.pictureBox26.Image = global::MahlerNo2.Viewer.Properties.Resources.Control;
-            this.pictureBox26.Location = new System.Drawing.Point(48, 480);
-            this.pictureBox26.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pictureBox26.Name = "pictureBox26";
-            this.pictureBox26.Size = new System.Drawing.Size(27, 30);
-            this.pictureBox26.TabIndex = 80;
-            this.pictureBox26.TabStop = false;
-            // 
             // label11
             // 
-            this.label11.Location = new System.Drawing.Point(5, 442);
+            this.label11.Location = new System.Drawing.Point(5, 332);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(47, 30);
             this.label11.TabIndex = 79;
@@ -381,7 +318,7 @@
             // pictureBox30
             // 
             this.pictureBox30.Image = global::MahlerNo2.Viewer.Properties.Resources.Control;
-            this.pictureBox30.Location = new System.Drawing.Point(75, 442);
+            this.pictureBox30.Location = new System.Drawing.Point(75, 332);
             this.pictureBox30.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox30.Name = "pictureBox30";
             this.pictureBox30.Size = new System.Drawing.Size(27, 30);
@@ -390,45 +327,16 @@
             // 
             // label12
             // 
-            this.label12.Location = new System.Drawing.Point(5, 405);
+            this.label12.Location = new System.Drawing.Point(5, 295);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(47, 30);
             this.label12.TabIndex = 77;
             this.label12.Text = "-1분";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label7
-            // 
-            this.label7.Location = new System.Drawing.Point(5, 368);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(41, 30);
-            this.label7.TabIndex = 76;
-            this.label7.Text = "+10분";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // pictureBox19
-            // 
-            this.pictureBox19.Image = global::MahlerNo2.Viewer.Properties.Resources.Shift;
-            this.pictureBox19.Location = new System.Drawing.Point(75, 368);
-            this.pictureBox19.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pictureBox19.Name = "pictureBox19";
-            this.pictureBox19.Size = new System.Drawing.Size(27, 30);
-            this.pictureBox19.TabIndex = 75;
-            this.pictureBox19.TabStop = false;
-            // 
-            // pictureBox20
-            // 
-            this.pictureBox20.Image = global::MahlerNo2.Viewer.Properties.Resources.Control;
-            this.pictureBox20.Location = new System.Drawing.Point(48, 368);
-            this.pictureBox20.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pictureBox20.Name = "pictureBox20";
-            this.pictureBox20.Size = new System.Drawing.Size(27, 30);
-            this.pictureBox20.TabIndex = 74;
-            this.pictureBox20.TabStop = false;
-            // 
             // label8
             // 
-            this.label8.Location = new System.Drawing.Point(5, 330);
+            this.label8.Location = new System.Drawing.Point(5, 257);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(47, 30);
             this.label8.TabIndex = 73;
@@ -438,7 +346,7 @@
             // pictureBox24
             // 
             this.pictureBox24.Image = global::MahlerNo2.Viewer.Properties.Resources.Control;
-            this.pictureBox24.Location = new System.Drawing.Point(75, 330);
+            this.pictureBox24.Location = new System.Drawing.Point(75, 257);
             this.pictureBox24.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox24.Name = "pictureBox24";
             this.pictureBox24.Size = new System.Drawing.Size(27, 30);
@@ -447,45 +355,16 @@
             // 
             // label9
             // 
-            this.label9.Location = new System.Drawing.Point(5, 292);
+            this.label9.Location = new System.Drawing.Point(5, 219);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(47, 30);
             this.label9.TabIndex = 71;
             this.label9.Text = "+1분";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label4
-            // 
-            this.label4.Location = new System.Drawing.Point(5, 255);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(41, 30);
-            this.label4.TabIndex = 70;
-            this.label4.Text = "-10초";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // pictureBox11
-            // 
-            this.pictureBox11.Image = global::MahlerNo2.Viewer.Properties.Resources.Shift;
-            this.pictureBox11.Location = new System.Drawing.Point(75, 255);
-            this.pictureBox11.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(27, 30);
-            this.pictureBox11.TabIndex = 69;
-            this.pictureBox11.TabStop = false;
-            // 
-            // pictureBox12
-            // 
-            this.pictureBox12.Image = global::MahlerNo2.Viewer.Properties.Resources.Control;
-            this.pictureBox12.Location = new System.Drawing.Point(48, 255);
-            this.pictureBox12.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(27, 30);
-            this.pictureBox12.TabIndex = 68;
-            this.pictureBox12.TabStop = false;
-            // 
             // label5
             // 
-            this.label5.Location = new System.Drawing.Point(5, 218);
+            this.label5.Location = new System.Drawing.Point(5, 181);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(47, 30);
             this.label5.TabIndex = 67;
@@ -495,7 +374,7 @@
             // pictureBox18
             // 
             this.pictureBox18.Image = global::MahlerNo2.Viewer.Properties.Resources.Control;
-            this.pictureBox18.Location = new System.Drawing.Point(75, 218);
+            this.pictureBox18.Location = new System.Drawing.Point(75, 181);
             this.pictureBox18.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox18.Name = "pictureBox18";
             this.pictureBox18.Size = new System.Drawing.Size(27, 30);
@@ -504,51 +383,12 @@
             // 
             // label6
             // 
-            this.label6.Location = new System.Drawing.Point(5, 180);
+            this.label6.Location = new System.Drawing.Point(5, 143);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(47, 30);
             this.label6.TabIndex = 65;
             this.label6.Text = "-1초";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label3
-            // 
-            this.label3.Location = new System.Drawing.Point(5, 142);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 30);
-            this.label3.TabIndex = 64;
-            this.label3.Text = "+10초";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // pictureBox17
-            // 
-            this.pictureBox17.Image = global::MahlerNo2.Viewer.Properties.Resources.Shift;
-            this.pictureBox17.Location = new System.Drawing.Point(75, 142);
-            this.pictureBox17.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pictureBox17.Name = "pictureBox17";
-            this.pictureBox17.Size = new System.Drawing.Size(27, 30);
-            this.pictureBox17.TabIndex = 63;
-            this.pictureBox17.TabStop = false;
-            // 
-            // pictureBox16
-            // 
-            this.pictureBox16.Image = global::MahlerNo2.Viewer.Properties.Resources.Control;
-            this.pictureBox16.Location = new System.Drawing.Point(48, 142);
-            this.pictureBox16.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pictureBox16.Name = "pictureBox16";
-            this.pictureBox16.Size = new System.Drawing.Size(27, 30);
-            this.pictureBox16.TabIndex = 62;
-            this.pictureBox16.TabStop = false;
-            // 
-            // pictureBox10
-            // 
-            this.pictureBox10.Image = global::MahlerNo2.Viewer.Properties.Resources.Right;
-            this.pictureBox10.Location = new System.Drawing.Point(103, 142);
-            this.pictureBox10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(27, 30);
-            this.pictureBox10.TabIndex = 61;
-            this.pictureBox10.TabStop = false;
             // 
             // pictureBox9
             // 
@@ -569,16 +409,6 @@
             this.label2.Text = "+5초";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = global::MahlerNo2.Viewer.Properties.Resources.Up;
-            this.pictureBox6.Location = new System.Drawing.Point(103, 368);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(27, 30);
-            this.pictureBox6.TabIndex = 58;
-            this.pictureBox6.TabStop = false;
-            // 
             // pictureBox5
             // 
             this.pictureBox5.Image = global::MahlerNo2.Viewer.Properties.Resources.Right;
@@ -592,22 +422,12 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::MahlerNo2.Viewer.Properties.Resources.Left;
-            this.pictureBox3.Location = new System.Drawing.Point(103, 180);
+            this.pictureBox3.Location = new System.Drawing.Point(103, 143);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(27, 30);
             this.pictureBox3.TabIndex = 56;
             this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::MahlerNo2.Viewer.Properties.Resources.Down;
-            this.pictureBox2.Location = new System.Drawing.Point(103, 480);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(27, 30);
-            this.pictureBox2.TabIndex = 55;
-            this.pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
@@ -656,11 +476,11 @@
             this.groupBox4.Controls.Add(this.pictureBox28);
             this.groupBox4.Controls.Add(this.label18);
             this.groupBox4.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.groupBox4.Location = new System.Drawing.Point(3, 795);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox4.Location = new System.Drawing.Point(6, 595);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(0);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox4.Size = new System.Drawing.Size(138, 94);
+            this.groupBox4.Size = new System.Drawing.Size(135, 94);
             this.groupBox4.TabIndex = 18;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "보기/감추기";
@@ -726,7 +546,7 @@
             // ptbOnline
             // 
             this.ptbOnline.Image = global::MahlerNo2.Viewer.Properties.Resources.On;
-            this.ptbOnline.Location = new System.Drawing.Point(6, 0);
+            this.ptbOnline.Location = new System.Drawing.Point(3, 8);
             this.ptbOnline.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ptbOnline.Name = "ptbOnline";
             this.ptbOnline.Size = new System.Drawing.Size(55, 60);
@@ -736,7 +556,7 @@
             // btnBackup
             // 
             this.btnBackup.Image = global::MahlerNo2.Viewer.Properties.Resources.Backup;
-            this.btnBackup.Location = new System.Drawing.Point(80, 0);
+            this.btnBackup.Location = new System.Drawing.Point(77, 8);
             this.btnBackup.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnBackup.Name = "btnBackup";
             this.btnBackup.Size = new System.Drawing.Size(55, 60);
@@ -745,19 +565,102 @@
             this.btnBackup.UseVisualStyleBackColor = true;
             this.btnBackup.Click += new System.EventHandler(this.btnBackup_Click);
             // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(152, 818);
+            this.tabControl1.TabIndex = 60;
+            this.tabControl1.TabStop = false;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.groupBox1);
+            this.tabPage1.Controls.Add(this.groupBox2);
+            this.tabPage1.Controls.Add(this.groupBox3);
+            this.tabPage1.Controls.Add(this.groupBox4);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(144, 789);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "단축키";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.usc졸려요);
+            this.tabPage2.Controls.Add(this.usc재밌어요);
+            this.tabPage2.Controls.Add(this.usc어려워요);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(144, 789);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "피드백";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // usc졸려요
+            // 
+            this.usc졸려요.Dock = System.Windows.Forms.DockStyle.Top;
+            this.usc졸려요.ImageName = "졸려요";
+            this.usc졸려요.Location = new System.Drawing.Point(3, 303);
+            this.usc졸려요.Name = "usc졸려요";
+            this.usc졸려요.Size = new System.Drawing.Size(138, 150);
+            this.usc졸려요.TabIndex = 2;
+            // 
+            // usc재밌어요
+            // 
+            this.usc재밌어요.Dock = System.Windows.Forms.DockStyle.Top;
+            this.usc재밌어요.ImageName = "재밌어요";
+            this.usc재밌어요.Location = new System.Drawing.Point(3, 153);
+            this.usc재밌어요.Name = "usc재밌어요";
+            this.usc재밌어요.Size = new System.Drawing.Size(138, 150);
+            this.usc재밌어요.TabIndex = 1;
+            // 
+            // usc어려워요
+            // 
+            this.usc어려워요.Dock = System.Windows.Forms.DockStyle.Top;
+            this.usc어려워요.ImageName = "어려워요";
+            this.usc어려워요.Location = new System.Drawing.Point(3, 3);
+            this.usc어려워요.Name = "usc어려워요";
+            this.usc어려워요.Size = new System.Drawing.Size(138, 150);
+            this.usc어려워요.TabIndex = 0;
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Name = "splitContainer1";
+            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.ptbOnline);
+            this.splitContainer1.Panel1.Controls.Add(this.btnBackup);
+            this.splitContainer1.Panel1.Padding = new System.Windows.Forms.Padding(5);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.tabControl1);
+            this.splitContainer1.Size = new System.Drawing.Size(152, 892);
+            this.splitContainer1.SplitterDistance = 70;
+            this.splitContainer1.TabIndex = 61;
+            this.splitContainer1.TabStop = false;
+            // 
             // RemoconControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btnBackup);
-            this.Controls.Add(this.ptbOnline);
-            this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.splitContainer1);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "RemoconControl";
-            this.Size = new System.Drawing.Size(146, 892);
+            this.Size = new System.Drawing.Size(152, 892);
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
@@ -771,24 +674,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox30)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox29)).EndInit();
@@ -796,6 +687,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox31)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbOnline)).EndInit();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -818,35 +716,19 @@
         private System.Windows.Forms.PictureBox pictureBox21;
         private System.Windows.Forms.PictureBox pictureBox15;
         private System.Windows.Forms.PictureBox pictureBox14;
-        private System.Windows.Forms.PictureBox pictureBox13;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.PictureBox pictureBox25;
-        private System.Windows.Forms.PictureBox pictureBox26;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.PictureBox pictureBox30;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.PictureBox pictureBox19;
-        private System.Windows.Forms.PictureBox pictureBox20;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.PictureBox pictureBox24;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.PictureBox pictureBox11;
-        private System.Windows.Forms.PictureBox pictureBox12;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pictureBox18;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox pictureBox17;
-        private System.Windows.Forms.PictureBox pictureBox16;
-        private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label16;
@@ -860,5 +742,12 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.PictureBox pictureBox29;
         private System.Windows.Forms.Button btnBackup;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private EmoticonControl usc졸려요;
+        private EmoticonControl usc재밌어요;
+        private EmoticonControl usc어려워요;
     }
 }

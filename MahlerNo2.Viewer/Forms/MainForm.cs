@@ -52,14 +52,20 @@ namespace MahlerNo2.Viewer.Forms
 
             DbContextFactory.ChangeIpAddress(Settings.Default.Address);
 
-            bdsShotFolder.DataSource = DataRepository.Shot.GetDateList().ConvertAll(x => new StringItem(x));
+            this.RunWithWaitCursor(() =>
+                      {
+                          bdsShotFolder.DataSource = DataRepository.Shot.GetDateList().ConvertAll(x => new StringItem(x));
+                      });
         }
 
         private void btnConnectOffline_Click(object sender, EventArgs e)
         {
             Program.OfflineMode = true;
 
-            bdsShotFolder.DataSource = OfflineShotManager.Instance.GetDateList().ConvertAll(x => new StringItem(x));
+            this.RunWithWaitCursor(() =>
+                      {
+                          bdsShotFolder.DataSource = OfflineShotManager.Instance.GetDateList().ConvertAll(x => new StringItem(x));
+                      });
         }
     }
 }

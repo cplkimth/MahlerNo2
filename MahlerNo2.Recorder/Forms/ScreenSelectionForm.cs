@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
 using MahlerNo2.Core.Components;
-using MahlerNo2.Recorder.Components;
 using MahlerNo2.Recorder.Controls;
 
 namespace MahlerNo2.Recorder.Forms

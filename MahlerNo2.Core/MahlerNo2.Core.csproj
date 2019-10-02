@@ -43,9 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Components\ControlExtension.cs" />
     <Compile Include="Components\KeyboardHook.cs" />
     <Compile Include="Components\ScreenShotTaker.cs" />
-    <Compile Include="Components\Shot.cs" />
     <Compile Include="Controls\BaseUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -71,8 +71,6 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

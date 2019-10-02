@@ -1,13 +1,12 @@
-﻿using System;
+﻿#region
+using System;
 using System.Drawing;
-using System.IO;
-using System.Threading;
 using System.Windows.Forms;
 using MahlerNo2.Core.Components;
 using MahlerNo2.Data;
-using MahlerNo2.Recorder.Components;
 using MahlerNo2.Recorder.Properties;
 using Tulpep.NotificationWindow;
+#endregion
 
 namespace MahlerNo2.Recorder.Forms
 {
@@ -29,12 +28,6 @@ namespace MahlerNo2.Recorder.Forms
             switch (keyData)
             {
                 case Keys.Control | Keys.Alt | Keys.F11:
-                    if (Clipboard.GetData(DataFormats.Text) is string clipboardText)
-                        txtNote.Text = clipboardText;
-                    tsbPlay.PerformClick();
-                    break;
-
-                case Keys.Control | Keys.Alt | Keys.F12:
                     tsbPlay.PerformClick();
                     break;
             }
@@ -91,29 +84,29 @@ if (Screen.AllScreens.Length > 1)
             {
                 tsiCamera.Enabled = true;
 
-                DataRepository.Shot.Save(bytes, txtNote.Text);
+                DataRepository.Shot.Save(bytes);
             }
             catch (Exception ex)
             {
                 Text = $"{DateTime.Now.ToShortTimeString()} : {ex.Message}";
+                
+                DataRepository.Log.Write(ex);
             }
             finally
             {
-                System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
-                timer.Interval = 1000;
-                timer.Tick += OnTime;
-                timer.Start();
+                Timer cameraTimer = new Timer();
+                cameraTimer.Interval = 1000;
+                cameraTimer.Tick += FlashCameraIcon;
+                cameraTimer.Start();
             }
-
-            txtNote.Text = string.Empty;
         }
 
-        private void OnTime(object sender, EventArgs e)
+        private void FlashCameraIcon(object sender, EventArgs e)
         {
             tsiCamera.Enabled = false;
-            System.Windows.Forms.Timer timer = (System.Windows.Forms.Timer)sender;
-            timer.Stop();
-            timer.Dispose();
+            Timer cameraTimer = (Timer) sender;
+            cameraTimer.Stop();
+            cameraTimer.Dispose();
         }
 
         private void tsbOption_Click(object sender, EventArgs e)
@@ -157,37 +150,17 @@ if (Screen.AllScreens.Length > 1)
             tsbPlay.Image = Resources.Pause;
         }
 
-        private void txtNote_Enter(object sender, EventArgs e)
-        {
-            StopTakingShot();
-        }
-
-        private void txtNote_Leave(object sender, EventArgs e)
-        {
-            StartTakingShot();
-        }
-
-        private void tmrBreakTime_Tick(object sender, EventArgs e)
-        {
-            //var breakTime = BreakTimeManager.Instance.GetBreakTimeText();
-
-            //if (breakTime == null)
-            //    return;
-
-            //await TtsHelper.SpeakAsync(breakTime);
-        }
-
-        private void TmrNotification_Tick(object sender, EventArgs e)
+        private void tmrNotification_Tick(object sender, EventArgs e)
         {
             if (tmrShot.Enabled)
                 return;
 
             PopupNotifier popup = new PopupNotifier();
-            popup.ImageSize = new System.Drawing.Size(200,131);
+            popup.ImageSize = new Size(200, 131);
             popup.Image = Resources.Popup;
             popup.Click += Popup_Click;
             popup.ContentText = "Play!";
-            popup.ContentFont = new System.Drawing.Font(Font.FontFamily, 30);
+            popup.ContentFont = new Font(Font.FontFamily, 30);
             popup.Popup();
         }
     }

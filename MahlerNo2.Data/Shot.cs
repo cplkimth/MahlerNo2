@@ -16,6 +16,5 @@ namespace MahlerNo2.Data
     {
         public System.DateTime At { get; set; }
         public byte[] Data { get; set; }
-        public string Note { get; set; }
     }
 }

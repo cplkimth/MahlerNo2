@@ -12,9 +12,11 @@ namespace MahlerNo2.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class BreakTime
+    public partial class Log
     {
+        public int LogId { get; set; }
         public System.DateTime At { get; set; }
-        public int No { get; set; }
+        public string Category { get; set; }
+        public string Text { get; set; }
     }
 }

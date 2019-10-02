@@ -4,11 +4,11 @@ namespace MahlerNo2.Data
     {
         static DbContextFactory()
         {
-            #if DEBUG
-            RawConnectionString = "Data Source=10.10.14.99;Initial Catalog=MahlerNo2;Persist Security Info=True;User ID=sa;Password=3512";
-            #else            
+#if DEBUG
+            RawConnectionString = "Data Source=cn76.ipdisk.co.kr,3423;Initial Catalog=MahlerNo2;uid=mahler;password=no2";
+#else
             RawConnectionString = "";
-            #endif
+#endif
         }
 
         public static string RawConnectionString { get; private set; }

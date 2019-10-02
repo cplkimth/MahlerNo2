@@ -11,13 +11,12 @@ namespace MahlerNo2.Data
 {
     public partial class ShotData
     {
-        public void Save(byte[] data, string note)
+        public void Save(byte[] data)
         {
             var shot = new Shot();
             var at = DateTime.Now;
             shot.At = new DateTime(at.Year, at.Month, at.Day, at.Hour, at.Minute, at.Second);
             shot.Data = data;
-            shot.Note = note;
 
             Insert(shot);
         }
