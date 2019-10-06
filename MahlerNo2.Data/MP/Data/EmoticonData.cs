@@ -6,7 +6,7 @@ namespace MahlerNo2.Data
 {
     public partial class EmoticonData
     {
-        public virtual Dictionary<string, int> GetLatestCounts(int minute)
+        public virtual Dictionary<string, int> GetLatest(int minute)
         {
             using (var context = DbContextFactory.Create())
             {

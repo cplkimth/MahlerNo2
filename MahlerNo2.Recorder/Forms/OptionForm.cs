@@ -28,7 +28,9 @@ namespace MahlerNo2.Recorder.Forms
                 return;
 
             nupShotInterval.Value = Settings.Default.ShotInterval;
+            nupEmoticonInterval.Value = Settings.Default.EmotionCheckInterval;
             nupMaxPreviousShot.Value = Settings.Default.MaxPreviousShots;
+            nupLatestEmoticonMinute.Value = Settings.Default.LatestEmoticonMinute;
             trbOpacity.Value = Settings.Default.Opacity;
             txtAddress.Text = Settings.Default.Address;
         }
@@ -36,7 +38,9 @@ namespace MahlerNo2.Recorder.Forms
         private void btnOK_Click(object sender, EventArgs e)
         {
             Settings.Default.ShotInterval = Convert.ToInt32(nupShotInterval.Value);
+            Settings.Default.EmotionCheckInterval = Convert.ToInt32(nupEmoticonInterval.Value);
             Settings.Default.MaxPreviousShots = Convert.ToInt32(nupMaxPreviousShot.Value);
+            Settings.Default.LatestEmoticonMinute = Convert.ToInt32(nupLatestEmoticonMinute.Value);
             Settings.Default.Opacity = trbOpacity.Value;
             Settings.Default.Address = txtAddress.Text;
             Settings.Default.Save();

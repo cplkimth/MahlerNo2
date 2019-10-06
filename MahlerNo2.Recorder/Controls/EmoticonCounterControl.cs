@@ -6,6 +6,7 @@ using System.Reflection;
 using MahlerNo2.Core.Components;
 using MahlerNo2.Core.Controls;
 using MahlerNo2.Data;
+using MahlerNo2.Recorder.Properties;
 #endregion
 
 namespace MahlerNo2.Recorder.Controls
@@ -36,7 +37,7 @@ namespace MahlerNo2.Recorder.Controls
 
         public void RefreshCount()
         {
-            var counts = DataRepository.Emoticon.GetLatestCounts(5);
+            var counts = DataRepository.Emoticon.GetLatest(Settings.Default.LatestEmoticonMinute);
             var names = Enum.GetNames(typeof(EmoticonType));
             foreach (var name in names)
                 if (counts.ContainsKey(name) == false)

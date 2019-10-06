@@ -106,5 +106,17 @@ namespace MahlerNo2.Recorder.Properties {
                 this["EmotionCheckInterval"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("5")]
+        public int LatestEmoticonMinute {
+            get {
+                return ((int)(this["LatestEmoticonMinute"]));
+            }
+            set {
+                this["LatestEmoticonMinute"] = value;
+            }
+        }
     }
 }
