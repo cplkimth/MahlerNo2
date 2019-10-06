@@ -228,9 +228,6 @@
     <None Include="Resources\재밌어요.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\졸려요.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Browse.png" />
   </ItemGroup>
   <ItemGroup>
@@ -240,7 +237,14 @@
     <None Include="Resources\재밌어요_gray.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\졸려요_gray.png" />
+    <None Include="Resources\쉬고싶어요.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\쉬고싶어요_gray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="References\ShaperRater.dll" />
+    <Content Include="References\ShaperRater.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

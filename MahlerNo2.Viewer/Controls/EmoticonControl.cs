@@ -1,14 +1,17 @@
 ﻿#region
 using System;
+using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
+using MahlerNo2.Core.Components;
+using MahlerNo2.Core.Controls;
 using MahlerNo2.Data;
 using MahlerNo2.Viewer.Properties;
 #endregion
 
 namespace MahlerNo2.Viewer.Controls
 {
-    public partial class EmoticonControl : UserControl
+    public partial class EmoticonControl : BaseUserControl
     {
         public EmoticonControl()
         {
@@ -22,11 +25,12 @@ namespace MahlerNo2.Viewer.Controls
             if (DesignMode || Program.IsRunTime == false)
                 return;
 
-            ptbImage.Image = (Image) Resources.ResourceManager.GetObject(ImageName);
-            toolTip.SetToolTip(ptbImage, ImageName);
+            ptbImage.Image = (Image) Resources.ResourceManager.GetObject(Emoticon.ToString());
+            toolTip.SetToolTip(ptbImage, Emoticon.ToString());
         }
 
-        public string ImageName { get; set; }
+        [DefaultValue(EmoticonType.어려워요)]
+        public EmoticonType Emoticon { get; set; }
 
         private const int MaxCoolTime = 60 * 10;
 
@@ -34,11 +38,11 @@ namespace MahlerNo2.Viewer.Controls
 
         private void ptbImage_Click(object sender, EventArgs e)
         {
-            Emoticon emoticon = new Emoticon { At = DateTime.Now, Name = ImageName };
+            Emoticon emoticon = new Emoticon { At = DateTime.Now, Name = Emoticon.ToString()};
             DataRepository.Emoticon.Insert(emoticon);
 
             ptbImage.Enabled = false;
-            ptbImage.Image = (Image) Resources.ResourceManager.GetObject(ImageName + "_gray");
+            ptbImage.Image = (Image) Resources.ResourceManager.GetObject(Emoticon + "_gray");
 
             _elapsedSecond = 0;
             Timer coolTimer = new Timer();
@@ -60,7 +64,7 @@ namespace MahlerNo2.Viewer.Controls
                 coolTimer.Dispose();
 
                 ptbImage.Enabled = true;
-                ptbImage.Image = (Image) Resources.ResourceManager.GetObject(ImageName);
+                ptbImage.Image = (Image) Resources.ResourceManager.GetObject(Emoticon.ToString());
                 prbCoolTime.Value = 0;
             }
         }

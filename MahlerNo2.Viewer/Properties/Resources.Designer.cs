@@ -273,6 +273,26 @@ namespace MahlerNo2.Viewer.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap 쉬고싶어요 {
+            get {
+                object obj = ResourceManager.GetObject("쉬고싶어요", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap 쉬고싶어요_gray {
+            get {
+                object obj = ResourceManager.GetObject("쉬고싶어요_gray", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap 어려워요 {
             get {
                 object obj = ResourceManager.GetObject("어려워요", resourceCulture);
@@ -306,26 +326,6 @@ namespace MahlerNo2.Viewer.Properties {
         internal static System.Drawing.Bitmap 재밌어요_gray {
             get {
                 object obj = ResourceManager.GetObject("재밌어요_gray", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap 졸려요 {
-            get {
-                object obj = ResourceManager.GetObject("졸려요", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap 졸려요_gray {
-            get {
-                object obj = ResourceManager.GetObject("졸려요_gray", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

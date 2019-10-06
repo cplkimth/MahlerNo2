@@ -1,4 +1,6 @@
-﻿namespace MahlerNo2.Viewer.Controls
+﻿using MahlerNo2.Core.Components;
+
+namespace MahlerNo2.Viewer.Controls
 {
     partial class RemoconControl
     {
@@ -74,7 +76,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.usc졸려요 = new MahlerNo2.Viewer.Controls.EmoticonControl();
+            this.usc쉬고싶어요 = new MahlerNo2.Viewer.Controls.EmoticonControl();
             this.usc재밌어요 = new MahlerNo2.Viewer.Controls.EmoticonControl();
             this.usc어려워요 = new MahlerNo2.Viewer.Controls.EmoticonControl();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -593,7 +595,7 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.usc졸려요);
+            this.tabPage2.Controls.Add(this.usc쉬고싶어요);
             this.tabPage2.Controls.Add(this.usc재밌어요);
             this.tabPage2.Controls.Add(this.usc어려워요);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
@@ -604,19 +606,19 @@
             this.tabPage2.Text = "피드백";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // usc졸려요
+            // usc쉬고싶어요
             // 
-            this.usc졸려요.Dock = System.Windows.Forms.DockStyle.Top;
-            this.usc졸려요.ImageName = "졸려요";
-            this.usc졸려요.Location = new System.Drawing.Point(3, 303);
-            this.usc졸려요.Name = "usc졸려요";
-            this.usc졸려요.Size = new System.Drawing.Size(138, 150);
-            this.usc졸려요.TabIndex = 2;
+            this.usc쉬고싶어요.Dock = System.Windows.Forms.DockStyle.Top;
+            this.usc쉬고싶어요.Emoticon = EmoticonType.쉬고싶어요;
+            this.usc쉬고싶어요.Location = new System.Drawing.Point(3, 303);
+            this.usc쉬고싶어요.Name = "usc쉬고싶어요";
+            this.usc쉬고싶어요.Size = new System.Drawing.Size(138, 150);
+            this.usc쉬고싶어요.TabIndex = 2;
             // 
             // usc재밌어요
             // 
             this.usc재밌어요.Dock = System.Windows.Forms.DockStyle.Top;
-            this.usc재밌어요.ImageName = "재밌어요";
+            this.usc재밌어요.Emoticon = EmoticonType.재밌어요;
             this.usc재밌어요.Location = new System.Drawing.Point(3, 153);
             this.usc재밌어요.Name = "usc재밌어요";
             this.usc재밌어요.Size = new System.Drawing.Size(138, 150);
@@ -625,7 +627,7 @@
             // usc어려워요
             // 
             this.usc어려워요.Dock = System.Windows.Forms.DockStyle.Top;
-            this.usc어려워요.ImageName = "어려워요";
+            this.usc어려워요.Emoticon = EmoticonType.어려워요;
             this.usc어려워요.Location = new System.Drawing.Point(3, 3);
             this.usc어려워요.Name = "usc어려워요";
             this.usc어려워요.Size = new System.Drawing.Size(138, 150);
@@ -746,7 +748,7 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private EmoticonControl usc졸려요;
+        private EmoticonControl usc쉬고싶어요;
         private EmoticonControl usc재밌어요;
         private EmoticonControl usc어려워요;
     }

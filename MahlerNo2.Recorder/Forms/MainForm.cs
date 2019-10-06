@@ -71,6 +71,9 @@ if (Screen.AllScreens.Length > 1)
                 }
             }
 #endif
+
+            tmrEmoticon.Interval = Settings.Default.EmotionCheckInterval * 1000;
+            tmrEmoticon.Start();
         }
 
         private void tmrShot_Tick(object sender, EventArgs e)
@@ -162,6 +165,11 @@ if (Screen.AllScreens.Length > 1)
             popup.ContentText = "Play!";
             popup.ContentFont = new Font(Font.FontFamily, 30);
             popup.Popup();
+        }
+
+        private void tmrEmoticon_Tick(object sender, EventArgs e)
+        {
+            uscEmoticonCounter.RefreshCount();
         }
     }
 }

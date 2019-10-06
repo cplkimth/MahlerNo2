@@ -39,9 +39,12 @@
             this.tsiCamera = new System.Windows.Forms.ToolStripButton();
             this.tbcPage = new System.Windows.Forms.TabControl();
             this.tbpSpeech = new System.Windows.Forms.TabPage();
+            this.uscEmoticonCounter = new MahlerNo2.Recorder.Controls.EmoticonCounterControl();
             this.tmrNotification = new System.Windows.Forms.Timer(this.components);
+            this.tmrEmoticon = new System.Windows.Forms.Timer(this.components);
             this.toolStrip1.SuspendLayout();
             this.tbcPage.SuspendLayout();
+            this.tbpSpeech.SuspendLayout();
             this.SuspendLayout();
             // 
             // tmrShot
@@ -61,7 +64,7 @@
             this.tsiCamera});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(736, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(636, 27);
             this.toolStrip1.TabIndex = 4;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -122,19 +125,28 @@
             this.tbcPage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbcPage.Name = "tbcPage";
             this.tbcPage.SelectedIndex = 0;
-            this.tbcPage.Size = new System.Drawing.Size(736, 391);
+            this.tbcPage.Size = new System.Drawing.Size(636, 292);
             this.tbcPage.TabIndex = 7;
             // 
             // tbpSpeech
             // 
+            this.tbpSpeech.Controls.Add(this.uscEmoticonCounter);
             this.tbpSpeech.Location = new System.Drawing.Point(4, 25);
             this.tbpSpeech.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbpSpeech.Name = "tbpSpeech";
             this.tbpSpeech.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tbpSpeech.Size = new System.Drawing.Size(728, 362);
+            this.tbpSpeech.Size = new System.Drawing.Size(628, 263);
             this.tbpSpeech.TabIndex = 1;
             this.tbpSpeech.Text = "Speech";
             this.tbpSpeech.UseVisualStyleBackColor = true;
+            // 
+            // uscEmoticonCounter
+            // 
+            this.uscEmoticonCounter.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uscEmoticonCounter.Location = new System.Drawing.Point(3, 4);
+            this.uscEmoticonCounter.Name = "uscEmoticonCounter";
+            this.uscEmoticonCounter.Size = new System.Drawing.Size(622, 255);
+            this.uscEmoticonCounter.TabIndex = 0;
             // 
             // tmrNotification
             // 
@@ -142,11 +154,16 @@
             this.tmrNotification.Interval = 60000;
             this.tmrNotification.Tick += new System.EventHandler(this.tmrNotification_Tick);
             // 
+            // tmrEmoticon
+            // 
+            this.tmrEmoticon.Interval = 3000;
+            this.tmrEmoticon.Tick += new System.EventHandler(this.tmrEmoticon_Tick);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(736, 418);
+            this.ClientSize = new System.Drawing.Size(636, 319);
             this.Controls.Add(this.tbcPage);
             this.Controls.Add(this.toolStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -157,6 +174,7 @@
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.tbcPage.ResumeLayout(false);
+            this.tbpSpeech.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -174,6 +192,8 @@
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton tsiCamera;
+        private Controls.EmoticonCounterControl uscEmoticonCounter;
+        private System.Windows.Forms.Timer tmrEmoticon;
     }
 }
 

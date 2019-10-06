@@ -17,5 +17,11 @@
     <Setting Name="Address" Type="System.String" Scope="User">
       <Value Profile="(Default)">cn76.ipdisk.co.kr, 3423</Value>
     </Setting>
+    <Setting Name="MaxRating" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">10</Value>
+    </Setting>
+    <Setting Name="EmotionCheckInterval" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">3</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

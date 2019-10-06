@@ -16,6 +16,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{8E4D80D2-2044-41AD-92A9-7F456A2BA3AB}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
+		Document\setup.sql = Document\setup.sql
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MahlerNo2.Data", "MahlerNo2.Data\MahlerNo2.Data.csproj", "{CC568B46-1BB5-4DE4-B979-AD8A1BADB15F}"

@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Components\ControlExtension.cs" />
+    <Compile Include="Components\EmoticonType.cs" />
     <Compile Include="Components\KeyboardHook.cs" />
     <Compile Include="Components\ScreenShotTaker.cs" />
     <Compile Include="Controls\BaseUserControl.cs">

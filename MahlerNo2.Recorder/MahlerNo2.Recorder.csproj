@@ -48,6 +48,10 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="ShaperRater">
+      <HintPath>..\MahlerNo2.Viewer\References\ShaperRater.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -65,6 +69,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\EmoticonCounterControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\EmoticonCounterControl.Designer.cs">
+      <DependentUpon>EmoticonCounterControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\EmoticonCounterLineControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\EmoticonCounterLineControl.Designer.cs">
+      <DependentUpon>EmoticonCounterLineControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\EmoticonListControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -103,6 +119,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Controls\EmoticonCounterControl.resx">
+      <DependentUpon>EmoticonCounterControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\EmoticonCounterLineControl.resx">
+      <DependentUpon>EmoticonCounterLineControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\EmoticonListControl.resx">
       <DependentUpon>EmoticonListControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -173,9 +195,6 @@
     <None Include="Resources\재밌어요.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\졸려요.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Popup.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -183,6 +202,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Components\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\쉬고싶어요.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\어려워요.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
