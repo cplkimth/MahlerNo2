@@ -64,7 +64,7 @@
             this.tsiCamera});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(636, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(556, 27);
             this.toolStrip1.TabIndex = 4;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -74,7 +74,7 @@
             this.tsbPlay.Image = global::MahlerNo2.Recorder.Properties.Resources.Play;
             this.tsbPlay.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbPlay.Name = "tsbPlay";
-            this.tsbPlay.Size = new System.Drawing.Size(29, 24);
+            this.tsbPlay.Size = new System.Drawing.Size(24, 24);
             this.tsbPlay.Text = "toolStripButton1";
             this.tsbPlay.ToolTipText = "Toggle Play/Pause";
             this.tsbPlay.Click += new System.EventHandler(this.tsbPlay_Click);
@@ -90,7 +90,7 @@
             this.tsbOption.Image = global::MahlerNo2.Recorder.Properties.Resources.Option;
             this.tsbOption.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbOption.Name = "tsbOption";
-            this.tsbOption.Size = new System.Drawing.Size(29, 24);
+            this.tsbOption.Size = new System.Drawing.Size(24, 24);
             this.tsbOption.Text = "Option";
             this.tsbOption.ToolTipText = "Option";
             this.tsbOption.Click += new System.EventHandler(this.tsbOption_Click);
@@ -99,7 +99,7 @@
             // 
             this.toolStripLabel1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(406, 24);
+            this.toolStripLabel1.Size = new System.Drawing.Size(318, 24);
             this.toolStripLabel1.Text = "Initial Catalog=MahlerNo2;User ID=mahler;Password=no2";
             // 
             // toolStripSeparator2
@@ -114,7 +114,7 @@
             this.tsiCamera.Image = global::MahlerNo2.Recorder.Properties.Resources.Camera;
             this.tsiCamera.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsiCamera.Name = "tsiCamera";
-            this.tsiCamera.Size = new System.Drawing.Size(29, 24);
+            this.tsiCamera.Size = new System.Drawing.Size(24, 24);
             this.tsiCamera.Text = "toolStripButton1";
             // 
             // tbcPage
@@ -122,20 +122,18 @@
             this.tbcPage.Controls.Add(this.tbpSpeech);
             this.tbcPage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbcPage.Location = new System.Drawing.Point(0, 27);
-            this.tbcPage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbcPage.Name = "tbcPage";
             this.tbcPage.SelectedIndex = 0;
-            this.tbcPage.Size = new System.Drawing.Size(636, 292);
+            this.tbcPage.Size = new System.Drawing.Size(556, 228);
             this.tbcPage.TabIndex = 7;
             // 
             // tbpSpeech
             // 
             this.tbpSpeech.Controls.Add(this.uscEmoticonCounter);
-            this.tbpSpeech.Location = new System.Drawing.Point(4, 25);
-            this.tbpSpeech.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbpSpeech.Location = new System.Drawing.Point(4, 22);
             this.tbpSpeech.Name = "tbpSpeech";
-            this.tbpSpeech.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tbpSpeech.Size = new System.Drawing.Size(628, 263);
+            this.tbpSpeech.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tbpSpeech.Size = new System.Drawing.Size(548, 202);
             this.tbpSpeech.TabIndex = 1;
             this.tbpSpeech.Text = "Speech";
             this.tbpSpeech.UseVisualStyleBackColor = true;
@@ -143,9 +141,10 @@
             // uscEmoticonCounter
             // 
             this.uscEmoticonCounter.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uscEmoticonCounter.Location = new System.Drawing.Point(3, 4);
+            this.uscEmoticonCounter.Location = new System.Drawing.Point(3, 3);
+            this.uscEmoticonCounter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.uscEmoticonCounter.Name = "uscEmoticonCounter";
-            this.uscEmoticonCounter.Size = new System.Drawing.Size(622, 255);
+            this.uscEmoticonCounter.Size = new System.Drawing.Size(542, 196);
             this.uscEmoticonCounter.TabIndex = 0;
             // 
             // tmrNotification
@@ -161,13 +160,11 @@
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(636, 319);
+            this.ClientSize = new System.Drawing.Size(556, 255);
             this.Controls.Add(this.tbcPage);
             this.Controls.Add(this.toolStrip1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "Mahler No. 2 Recorder";
