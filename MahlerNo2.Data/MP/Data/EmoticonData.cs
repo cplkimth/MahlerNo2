@@ -14,7 +14,7 @@ namespace MahlerNo2.Data
                 var from = DateTime.Now.AddMinutes(minute * -1);
 
                 var query = from x in context.Emoticons
-                            //where x.At >= @from && x.At <= to
+                            where x.At >= @from && x.At <= to
                             group x by x.Name into g
                             select g;
 
