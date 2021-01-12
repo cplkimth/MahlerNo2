@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MahlerNo2.Data", "MahlerNo2
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MahlerNo2.UnitTest", "MahlerNo2.UnitTest\MahlerNo2.UnitTest.csproj", "{8B567AC7-2A0E-41E8-966A-D03B744E4AF8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MahlerNo2.BatchDownloader", "MahlerNo2.BatchDownloader\MahlerNo2.BatchDownloader.csproj", "{8442F6EA-E00B-464D-8438-01B559AAEFC1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +55,10 @@ Global
 		{8B567AC7-2A0E-41E8-966A-D03B744E4AF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B567AC7-2A0E-41E8-966A-D03B744E4AF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B567AC7-2A0E-41E8-966A-D03B744E4AF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8442F6EA-E00B-464D-8438-01B559AAEFC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8442F6EA-E00B-464D-8438-01B559AAEFC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8442F6EA-E00B-464D-8438-01B559AAEFC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8442F6EA-E00B-464D-8438-01B559AAEFC1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

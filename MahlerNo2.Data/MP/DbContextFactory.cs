@@ -5,9 +5,9 @@ namespace MahlerNo2.Data
         static DbContextFactory()
         {
 #if DEBUG
-            RawConnectionString = "Data Source=cn76.ipdisk.co.kr,3423;Initial Catalog=MahlerNo2;uid=mahler;password=no2";
+            //RawConnectionString = "Data Source=cn76.ipdisk.co.kr,3423;Initial Catalog=MahlerNo2;uid=mahler;password=no2";
 #else
-            RawConnectionString = "";
+            RawConnectionString = "Data Source=.;Initial Catalog=MahlerNo2;uid=sa;password=3512";
 #endif
         }
 
